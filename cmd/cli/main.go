@@ -1,7 +1,7 @@
 package main
 
-import "fmt"
+import "tower-cli-go/internal/commands"
 
 func main() {
-	fmt.Println("hello")
+	commands.Execute()
 }
