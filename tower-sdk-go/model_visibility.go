@@ -9,12 +9,12 @@
  */
 
 package openapi
-// OrgRole the model 'OrgRole'
-type OrgRole string
+// Visibility the model 'Visibility'
+type Visibility string
 
-// List of OrgRole
+// List of Visibility
 const (
-	OWNER OrgRole = "owner"
-	MEMBER OrgRole = "member"
-	COLLABORATOR OrgRole = "collaborator"
+	VISIBILITY_PRIVATE Visibility = "PRIVATE"
+	VISIBILITY_SHARED Visibility = "SHARED"
+	VISIBILITY_PUBLIC Visibility = "PUBLIC"
 )

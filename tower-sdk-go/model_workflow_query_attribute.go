@@ -14,6 +14,6 @@ type WorkflowQueryAttribute string
 
 // List of WorkflowQueryAttribute
 const (
-	OPTIMIZED WorkflowQueryAttribute = "optimized"
-	LABELS WorkflowQueryAttribute = "labels"
+	WORKFLOWQUERYATTRIBUTE_OPTIMIZED WorkflowQueryAttribute = "optimized"
+	WORKFLOWQUERYATTRIBUTE_LABELS WorkflowQueryAttribute = "labels"
 )

@@ -14,6 +14,6 @@ type PipelineSchemaAttributes string
 
 // List of PipelineSchemaAttributes
 const (
-	SCHEMA PipelineSchemaAttributes = "schema"
-	PARAMS PipelineSchemaAttributes = "params"
+	PIPELINESCHEMAATTRIBUTES_SCHEMA PipelineSchemaAttributes = "schema"
+	PIPELINESCHEMAATTRIBUTES_PARAMS PipelineSchemaAttributes = "params"
 )

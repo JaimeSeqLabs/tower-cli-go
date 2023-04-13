@@ -9,11 +9,10 @@
  */
 
 package openapi
-// TraceProcessingStatus the model 'TraceProcessingStatus'
-type TraceProcessingStatus string
+// ActionQueryAttribute the model 'ActionQueryAttribute'
+type ActionQueryAttribute string
 
-// List of TraceProcessingStatus
+// List of ActionQueryAttribute
 const (
-	OK TraceProcessingStatus = "OK"
-	KO TraceProcessingStatus = "KO"
+	ACTIONQUERYATTRIBUTE_LABELS ActionQueryAttribute = "labels"
 )

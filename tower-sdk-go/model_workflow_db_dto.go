@@ -15,7 +15,7 @@ import (
 // WorkflowDbDto struct for WorkflowDbDto
 type WorkflowDbDto struct {
 	CommandLine string `json:"commandLine,omitempty"`
-	Params map[string]map[string]interface{} `json:"params,omitempty"`
+	Params map[string]bool `json:"params,omitempty"`
 	ProjectDir string `json:"projectDir,omitempty"`
 	Profile string `json:"profile,omitempty"`
 	Start time.Time `json:"start,omitempty"`

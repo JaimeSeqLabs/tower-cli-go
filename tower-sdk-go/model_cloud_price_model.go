@@ -14,6 +14,6 @@ type CloudPriceModel string
 
 // List of CloudPriceModel
 const (
-	STANDARD CloudPriceModel = "standard"
-	SPOT CloudPriceModel = "spot"
+	CLOUDPRICEMODEL_STANDARD CloudPriceModel = "standard"
+	CLOUDPRICEMODEL_SPOT CloudPriceModel = "spot"
 )

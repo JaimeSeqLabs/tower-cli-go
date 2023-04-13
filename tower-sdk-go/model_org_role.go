@@ -9,10 +9,12 @@
  */
 
 package openapi
-// ActionQueryAttribute the model 'ActionQueryAttribute'
-type ActionQueryAttribute string
+// OrgRole the model 'OrgRole'
+type OrgRole string
 
-// List of ActionQueryAttribute
+// List of OrgRole
 const (
-	LABELS ActionQueryAttribute = "labels"
+	ORGROLE_OWNER OrgRole = "owner"
+	ORGROLE_MEMBER OrgRole = "member"
+	ORGROLE_COLLABORATOR OrgRole = "collaborator"
 )

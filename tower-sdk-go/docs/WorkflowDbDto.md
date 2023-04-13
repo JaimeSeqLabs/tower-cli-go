@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CommandLine** | **string** |  | [optional] 
-**Params** | **map[string]map[string]interface{}** |  | [optional] 
+**Params** | **map[string]bool** |  | [optional] 
 **ProjectDir** | **string** |  | [optional] 
 **Profile** | **string** |  | [optional] 
 **Start** | [**time.Time**](time.Time.md) |  | [optional] 

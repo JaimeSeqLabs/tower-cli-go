@@ -14,5 +14,5 @@ type ComputeEnvQueryAttribute string
 
 // List of ComputeEnvQueryAttribute
 const (
-	LABELS ComputeEnvQueryAttribute = "labels"
+	COMPUTEENVQUERYATTRIBUTE_LABELS ComputeEnvQueryAttribute = "labels"
 )

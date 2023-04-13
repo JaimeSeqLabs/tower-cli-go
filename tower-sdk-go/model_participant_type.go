@@ -14,7 +14,7 @@ type ParticipantType string
 
 // List of ParticipantType
 const (
-	MEMBER ParticipantType = "MEMBER"
-	TEAM ParticipantType = "TEAM"
-	COLLABORATOR ParticipantType = "COLLABORATOR"
+	PARTICIPANTTYPE_MEMBER ParticipantType = "MEMBER"
+	PARTICIPANTTYPE_TEAM ParticipantType = "TEAM"
+	PARTICIPANTTYPE_COLLABORATOR ParticipantType = "COLLABORATOR"
 )

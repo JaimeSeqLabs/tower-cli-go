@@ -29,8 +29,8 @@ var (
 // DefaultApiService DefaultApi service
 type DefaultApiService service
 
-// AddLabelsToActionsOpts Optional parameters for the method 'AddLabelsToActions'
-type AddLabelsToActionsOpts struct {
+// DefaultApiAddLabelsToActionsOpts Optional parameters for the method 'AddLabelsToActions'
+type DefaultApiAddLabelsToActionsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -38,10 +38,10 @@ type AddLabelsToActionsOpts struct {
 AddLabelsToActions Add some labels to some actions
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateWorkflowLabelsRequest Labels add request
- * @param optional nil or *AddLabelsToActionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiAddLabelsToActionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *AddLabelsToActionsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *DefaultApiAddLabelsToActionsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -105,8 +105,8 @@ func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateWo
 	return localVarHTTPResponse, nil
 }
 
-// AddLabelsToPipelinesOpts Optional parameters for the method 'AddLabelsToPipelines'
-type AddLabelsToPipelinesOpts struct {
+// DefaultApiAddLabelsToPipelinesOpts Optional parameters for the method 'AddLabelsToPipelines'
+type DefaultApiAddLabelsToPipelinesOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -114,10 +114,10 @@ type AddLabelsToPipelinesOpts struct {
 AddLabelsToPipelines Add some labels to some pipelines
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associatePipelineLabelsRequest Labels add request
- * @param optional nil or *AddLabelsToPipelinesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiAddLabelsToPipelinesOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) AddLabelsToPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *AddLabelsToPipelinesOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) AddLabelsToPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *DefaultApiAddLabelsToPipelinesOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -181,8 +181,8 @@ func (a *DefaultApiService) AddLabelsToPipelines(ctx _context.Context, associate
 	return localVarHTTPResponse, nil
 }
 
-// AddLabelsToWorkflowsOpts Optional parameters for the method 'AddLabelsToWorkflows'
-type AddLabelsToWorkflowsOpts struct {
+// DefaultApiAddLabelsToWorkflowsOpts Optional parameters for the method 'AddLabelsToWorkflows'
+type DefaultApiAddLabelsToWorkflowsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -190,10 +190,10 @@ type AddLabelsToWorkflowsOpts struct {
 AddLabelsToWorkflows Add some labels to some workflows
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateWorkflowLabelsRequest Labels add request
- * @param optional nil or *AddLabelsToWorkflowsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiAddLabelsToWorkflowsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) AddLabelsToWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *AddLabelsToWorkflowsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) AddLabelsToWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *DefaultApiAddLabelsToWorkflowsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -257,8 +257,8 @@ func (a *DefaultApiService) AddLabelsToWorkflows(ctx _context.Context, associate
 	return localVarHTTPResponse, nil
 }
 
-// ApplyLabelsToActionsOpts Optional parameters for the method 'ApplyLabelsToActions'
-type ApplyLabelsToActionsOpts struct {
+// DefaultApiApplyLabelsToActionsOpts Optional parameters for the method 'ApplyLabelsToActions'
+type DefaultApiApplyLabelsToActionsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -266,10 +266,10 @@ type ApplyLabelsToActionsOpts struct {
 ApplyLabelsToActions Apply some labels to some actions
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateActionLabelsRequest Labels apply request
- * @param optional nil or *ApplyLabelsToActionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiApplyLabelsToActionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) ApplyLabelsToActions(ctx _context.Context, associateActionLabelsRequest AssociateActionLabelsRequest, localVarOptionals *ApplyLabelsToActionsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ApplyLabelsToActions(ctx _context.Context, associateActionLabelsRequest AssociateActionLabelsRequest, localVarOptionals *DefaultApiApplyLabelsToActionsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -333,8 +333,8 @@ func (a *DefaultApiService) ApplyLabelsToActions(ctx _context.Context, associate
 	return localVarHTTPResponse, nil
 }
 
-// ApplyLabelsToPipelinesOpts Optional parameters for the method 'ApplyLabelsToPipelines'
-type ApplyLabelsToPipelinesOpts struct {
+// DefaultApiApplyLabelsToPipelinesOpts Optional parameters for the method 'ApplyLabelsToPipelines'
+type DefaultApiApplyLabelsToPipelinesOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -342,10 +342,10 @@ type ApplyLabelsToPipelinesOpts struct {
 ApplyLabelsToPipelines Apply some labels to some pipelines
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associatePipelineLabelsRequest Labels apply request
- * @param optional nil or *ApplyLabelsToPipelinesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiApplyLabelsToPipelinesOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) ApplyLabelsToPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *ApplyLabelsToPipelinesOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ApplyLabelsToPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *DefaultApiApplyLabelsToPipelinesOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -409,8 +409,8 @@ func (a *DefaultApiService) ApplyLabelsToPipelines(ctx _context.Context, associa
 	return localVarHTTPResponse, nil
 }
 
-// ApplyLabelsToWorkflowsOpts Optional parameters for the method 'ApplyLabelsToWorkflows'
-type ApplyLabelsToWorkflowsOpts struct {
+// DefaultApiApplyLabelsToWorkflowsOpts Optional parameters for the method 'ApplyLabelsToWorkflows'
+type DefaultApiApplyLabelsToWorkflowsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -418,10 +418,10 @@ type ApplyLabelsToWorkflowsOpts struct {
 ApplyLabelsToWorkflows Apply some labels to some workflows
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateWorkflowLabelsRequest Labels apply request
- * @param optional nil or *ApplyLabelsToWorkflowsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiApplyLabelsToWorkflowsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) ApplyLabelsToWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *ApplyLabelsToWorkflowsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ApplyLabelsToWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *DefaultApiApplyLabelsToWorkflowsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -485,21 +485,21 @@ func (a *DefaultApiService) ApplyLabelsToWorkflows(ctx _context.Context, associa
 	return localVarHTTPResponse, nil
 }
 
-// CancelWorkflowOpts Optional parameters for the method 'CancelWorkflow'
-type CancelWorkflowOpts struct {
+// DefaultApiCancelWorkflowOpts Optional parameters for the method 'CancelWorkflow'
+type DefaultApiCancelWorkflowOpts struct {
     WorkspaceId optional.Int64
-    Body optional.Map[string]interface{}
+    Body optional.Map    
 }
 
 /*
 CancelWorkflow Cancel a Workflow execution
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *CancelWorkflowOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCancelWorkflowOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Body" (optional.Map[string]interface{}) - 
 */
-func (a *DefaultApiService) CancelWorkflow(ctx _context.Context, workflowId string, localVarOptionals *CancelWorkflowOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) CancelWorkflow(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiCancelWorkflowOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -578,8 +578,8 @@ func (a *DefaultApiService) CancelWorkflow(ctx _context.Context, workflowId stri
 	return localVarHTTPResponse, nil
 }
 
-// CreateActionOpts Optional parameters for the method 'CreateAction'
-type CreateActionOpts struct {
+// DefaultApiCreateActionOpts Optional parameters for the method 'CreateAction'
+type DefaultApiCreateActionOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -587,11 +587,11 @@ type CreateActionOpts struct {
 CreateAction Create a new Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createActionRequest Action create request
- * @param optional nil or *CreateActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateActionResponse
 */
-func (a *DefaultApiService) CreateAction(ctx _context.Context, createActionRequest CreateActionRequest, localVarOptionals *CreateActionOpts) (CreateActionResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateAction(ctx _context.Context, createActionRequest CreateActionRequest, localVarOptionals *DefaultApiCreateActionOpts) (CreateActionResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -685,19 +685,19 @@ func (a *DefaultApiService) CreateAction(ctx _context.Context, createActionReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateAvatarOpts Optional parameters for the method 'CreateAvatar'
-type CreateAvatarOpts struct {
+// DefaultApiCreateAvatarOpts Optional parameters for the method 'CreateAvatar'
+type DefaultApiCreateAvatarOpts struct {
     Image optional.Interface
 }
 
 /*
 CreateAvatar Create the avatar image
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *CreateAvatarOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateAvatarOpts - Optional Parameters:
  * @param "Image" (optional.Interface of *os.File) - 
 @return CreateAvatarResponse
 */
-func (a *DefaultApiService) CreateAvatar(ctx _context.Context, localVarOptionals *CreateAvatarOpts) (CreateAvatarResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateAvatar(ctx _context.Context, localVarOptionals *DefaultApiCreateAvatarOpts) (CreateAvatarResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -801,8 +801,8 @@ func (a *DefaultApiService) CreateAvatar(ctx _context.Context, localVarOptionals
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateComputeEnvOpts Optional parameters for the method 'CreateComputeEnv'
-type CreateComputeEnvOpts struct {
+// DefaultApiCreateComputeEnvOpts Optional parameters for the method 'CreateComputeEnv'
+type DefaultApiCreateComputeEnvOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -810,11 +810,11 @@ type CreateComputeEnvOpts struct {
 CreateComputeEnv Create a new Tower compute environment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createComputeEnvRequest Compute environment create request
- * @param optional nil or *CreateComputeEnvOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateComputeEnvOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateComputeEnvResponse
 */
-func (a *DefaultApiService) CreateComputeEnv(ctx _context.Context, createComputeEnvRequest CreateComputeEnvRequest, localVarOptionals *CreateComputeEnvOpts) (CreateComputeEnvResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateComputeEnv(ctx _context.Context, createComputeEnvRequest CreateComputeEnvRequest, localVarOptionals *DefaultApiCreateComputeEnvOpts) (CreateComputeEnvResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -908,8 +908,8 @@ func (a *DefaultApiService) CreateComputeEnv(ctx _context.Context, createCompute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateCredentialsOpts Optional parameters for the method 'CreateCredentials'
-type CreateCredentialsOpts struct {
+// DefaultApiCreateCredentialsOpts Optional parameters for the method 'CreateCredentials'
+type DefaultApiCreateCredentialsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -917,11 +917,11 @@ type CreateCredentialsOpts struct {
 CreateCredentials Create a new credentials record
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createCredentialsRequest Credentials create request
- * @param optional nil or *CreateCredentialsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateCredentialsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateCredentialsResponse
 */
-func (a *DefaultApiService) CreateCredentials(ctx _context.Context, createCredentialsRequest CreateCredentialsRequest, localVarOptionals *CreateCredentialsOpts) (CreateCredentialsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateCredentials(ctx _context.Context, createCredentialsRequest CreateCredentialsRequest, localVarOptionals *DefaultApiCreateCredentialsOpts) (CreateCredentialsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1115,8 +1115,8 @@ func (a *DefaultApiService) CreateDataset(ctx _context.Context, workspaceId int6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateLabelOpts Optional parameters for the method 'CreateLabel'
-type CreateLabelOpts struct {
+// DefaultApiCreateLabelOpts Optional parameters for the method 'CreateLabel'
+type DefaultApiCreateLabelOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -1124,11 +1124,11 @@ type CreateLabelOpts struct {
 CreateLabel Create a new label
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createLabelRequest Label create request
- * @param optional nil or *CreateLabelOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateLabelOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateLabelResponse
 */
-func (a *DefaultApiService) CreateLabel(ctx _context.Context, createLabelRequest CreateLabelRequest, localVarOptionals *CreateLabelOpts) (CreateLabelResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateLabel(ctx _context.Context, createLabelRequest CreateLabelRequest, localVarOptionals *DefaultApiCreateLabelOpts) (CreateLabelResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1649,8 +1649,8 @@ func (a *DefaultApiService) CreateOrganizationTeamMember(ctx _context.Context, o
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreatePipelineOpts Optional parameters for the method 'CreatePipeline'
-type CreatePipelineOpts struct {
+// DefaultApiCreatePipelineOpts Optional parameters for the method 'CreatePipeline'
+type DefaultApiCreatePipelineOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -1658,11 +1658,11 @@ type CreatePipelineOpts struct {
 CreatePipeline Create a new Pipeline in a workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createPipelineRequest Pipeline creation request
- * @param optional nil or *CreatePipelineOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreatePipelineOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreatePipelineResponse
 */
-func (a *DefaultApiService) CreatePipeline(ctx _context.Context, createPipelineRequest CreatePipelineRequest, localVarOptionals *CreatePipelineOpts) (CreatePipelineResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreatePipeline(ctx _context.Context, createPipelineRequest CreatePipelineRequest, localVarOptionals *DefaultApiCreatePipelineOpts) (CreatePipelineResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1765,8 +1765,8 @@ func (a *DefaultApiService) CreatePipeline(ctx _context.Context, createPipelineR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreatePipelineSecretOpts Optional parameters for the method 'CreatePipelineSecret'
-type CreatePipelineSecretOpts struct {
+// DefaultApiCreatePipelineSecretOpts Optional parameters for the method 'CreatePipelineSecret'
+type DefaultApiCreatePipelineSecretOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -1774,11 +1774,11 @@ type CreatePipelineSecretOpts struct {
 CreatePipelineSecret Create a Pipeline Secrets inside the given workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param createPipelineSecretRequest Pipeline secret create request
- * @param optional nil or *CreatePipelineSecretOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreatePipelineSecretOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreatePipelineSecretResponse
 */
-func (a *DefaultApiService) CreatePipelineSecret(ctx _context.Context, createPipelineSecretRequest CreatePipelineSecretRequest, localVarOptionals *CreatePipelineSecretOpts) (CreatePipelineSecretResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreatePipelineSecret(ctx _context.Context, createPipelineSecretRequest CreatePipelineSecretRequest, localVarOptionals *DefaultApiCreatePipelineSecretOpts) (CreatePipelineSecretResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -1978,8 +1978,8 @@ func (a *DefaultApiService) CreateToken(ctx _context.Context, createAccessTokenR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateTraceOpts Optional parameters for the method 'CreateTrace'
-type CreateTraceOpts struct {
+// DefaultApiCreateTraceOpts Optional parameters for the method 'CreateTrace'
+type DefaultApiCreateTraceOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -1987,11 +1987,11 @@ type CreateTraceOpts struct {
 CreateTrace Create a new Workflow execution trace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param traceCreateRequest Trace create request
- * @param optional nil or *CreateTraceOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateTraceOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return TraceCreateResponse
 */
-func (a *DefaultApiService) CreateTrace(ctx _context.Context, traceCreateRequest TraceCreateRequest, localVarOptionals *CreateTraceOpts) (TraceCreateResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateTrace(ctx _context.Context, traceCreateRequest TraceCreateRequest, localVarOptionals *DefaultApiCreateTraceOpts) (TraceCreateResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2085,8 +2085,8 @@ func (a *DefaultApiService) CreateTrace(ctx _context.Context, traceCreateRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateWorkflowLaunchOpts Optional parameters for the method 'CreateWorkflowLaunch'
-type CreateWorkflowLaunchOpts struct {
+// DefaultApiCreateWorkflowLaunchOpts Optional parameters for the method 'CreateWorkflowLaunch'
+type DefaultApiCreateWorkflowLaunchOpts struct {
     WorkspaceId optional.Int64
     Optimized optional.Bool
     SourceWorkspaceId optional.Int64
@@ -2096,13 +2096,13 @@ type CreateWorkflowLaunchOpts struct {
 CreateWorkflowLaunch Submit a Workflow execution
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param submitWorkflowLaunchRequest Workflow launch request
- * @param optional nil or *CreateWorkflowLaunchOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateWorkflowLaunchOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Optimized" (optional.Bool) -  Launch with optimized configuration from groundswell service
  * @param "SourceWorkspaceId" (optional.Int64) - 
 @return SubmitWorkflowLaunchResponse
 */
-func (a *DefaultApiService) CreateWorkflowLaunch(ctx _context.Context, submitWorkflowLaunchRequest SubmitWorkflowLaunchRequest, localVarOptionals *CreateWorkflowLaunchOpts) (SubmitWorkflowLaunchResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateWorkflowLaunch(ctx _context.Context, submitWorkflowLaunchRequest SubmitWorkflowLaunchRequest, localVarOptionals *DefaultApiCreateWorkflowLaunchOpts) (SubmitWorkflowLaunchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2202,8 +2202,8 @@ func (a *DefaultApiService) CreateWorkflowLaunch(ctx _context.Context, submitWor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// CreateWorkflowStarOpts Optional parameters for the method 'CreateWorkflowStar'
-type CreateWorkflowStarOpts struct {
+// DefaultApiCreateWorkflowStarOpts Optional parameters for the method 'CreateWorkflowStar'
+type DefaultApiCreateWorkflowStarOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -2211,11 +2211,11 @@ type CreateWorkflowStarOpts struct {
 CreateWorkflowStar Star a workflow
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *CreateWorkflowStarOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiCreateWorkflowStarOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateWorkflowStarResponse
 */
-func (a *DefaultApiService) CreateWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *CreateWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) CreateWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiCreateWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -2539,8 +2539,8 @@ func (a *DefaultApiService) CreateWorkspaceParticipant(ctx _context.Context, org
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DeleteActionOpts Optional parameters for the method 'DeleteAction'
-type DeleteActionOpts struct {
+// DefaultApiDeleteActionOpts Optional parameters for the method 'DeleteAction'
+type DefaultApiDeleteActionOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -2548,10 +2548,10 @@ type DeleteActionOpts struct {
 DeleteAction Delete a Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param actionId Action string identifier
- * @param optional nil or *DeleteActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeleteAction(ctx _context.Context, actionId string, localVarOptionals *DeleteActionOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteAction(ctx _context.Context, actionId string, localVarOptionals *DefaultApiDeleteActionOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -2698,8 +2698,8 @@ func (a *DefaultApiService) DeleteAllTokens(ctx _context.Context) (*_nethttp.Res
 	return localVarHTTPResponse, nil
 }
 
-// DeleteComputeEnvOpts Optional parameters for the method 'DeleteComputeEnv'
-type DeleteComputeEnvOpts struct {
+// DefaultApiDeleteComputeEnvOpts Optional parameters for the method 'DeleteComputeEnv'
+type DefaultApiDeleteComputeEnvOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -2707,10 +2707,10 @@ type DeleteComputeEnvOpts struct {
 DeleteComputeEnv Delete an existing Tower compute environment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param computeEnvId Compute environment string identifier
- * @param optional nil or *DeleteComputeEnvOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteComputeEnvOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeleteComputeEnv(ctx _context.Context, computeEnvId string, localVarOptionals *DeleteComputeEnvOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteComputeEnv(ctx _context.Context, computeEnvId string, localVarOptionals *DefaultApiDeleteComputeEnvOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -2793,8 +2793,8 @@ func (a *DefaultApiService) DeleteComputeEnv(ctx _context.Context, computeEnvId 
 	return localVarHTTPResponse, nil
 }
 
-// DeleteCredentialsOpts Optional parameters for the method 'DeleteCredentials'
-type DeleteCredentialsOpts struct {
+// DefaultApiDeleteCredentialsOpts Optional parameters for the method 'DeleteCredentials'
+type DefaultApiDeleteCredentialsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -2802,10 +2802,10 @@ type DeleteCredentialsOpts struct {
 DeleteCredentials Delete the credentials record for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param credentialsId Credentials string identifier
- * @param optional nil or *DeleteCredentialsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteCredentialsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeleteCredentials(ctx _context.Context, credentialsId string, localVarOptionals *DeleteCredentialsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteCredentials(ctx _context.Context, credentialsId string, localVarOptionals *DefaultApiDeleteCredentialsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -2958,8 +2958,8 @@ func (a *DefaultApiService) DeleteDataset(ctx _context.Context, workspaceId int6
 	return localVarHTTPResponse, nil
 }
 
-// DeleteLabelOpts Optional parameters for the method 'DeleteLabel'
-type DeleteLabelOpts struct {
+// DefaultApiDeleteLabelOpts Optional parameters for the method 'DeleteLabel'
+type DefaultApiDeleteLabelOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -2967,10 +2967,10 @@ type DeleteLabelOpts struct {
 DeleteLabel Delete a label
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param labelId Label numeric identifier
- * @param optional nil or *DeleteLabelOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteLabelOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeleteLabel(ctx _context.Context, labelId int64, localVarOptionals *DeleteLabelOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteLabel(ctx _context.Context, labelId int64, localVarOptionals *DefaultApiDeleteLabelOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -3360,8 +3360,8 @@ func (a *DefaultApiService) DeleteOrganizationTeamMember(ctx _context.Context, o
 	return localVarHTTPResponse, nil
 }
 
-// DeletePipelineOpts Optional parameters for the method 'DeletePipeline'
-type DeletePipelineOpts struct {
+// DefaultApiDeletePipelineOpts Optional parameters for the method 'DeletePipeline'
+type DefaultApiDeletePipelineOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -3369,10 +3369,10 @@ type DeletePipelineOpts struct {
 DeletePipeline Delete a Pipeline
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param pipelineId Pipeline numeric identifier
- * @param optional nil or *DeletePipelineOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeletePipelineOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeletePipeline(ctx _context.Context, pipelineId int64, localVarOptionals *DeletePipelineOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeletePipeline(ctx _context.Context, pipelineId int64, localVarOptionals *DefaultApiDeletePipelineOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -3446,8 +3446,8 @@ func (a *DefaultApiService) DeletePipeline(ctx _context.Context, pipelineId int6
 	return localVarHTTPResponse, nil
 }
 
-// DeletePipelineSecretOpts Optional parameters for the method 'DeletePipelineSecret'
-type DeletePipelineSecretOpts struct {
+// DefaultApiDeletePipelineSecretOpts Optional parameters for the method 'DeletePipelineSecret'
+type DefaultApiDeletePipelineSecretOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -3455,10 +3455,10 @@ type DeletePipelineSecretOpts struct {
 DeletePipelineSecret Delete the pipeline secret record for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param secretId Secret numeric identifier
- * @param optional nil or *DeletePipelineSecretOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeletePipelineSecretOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) DeletePipelineSecret(ctx _context.Context, secretId int64, localVarOptionals *DeletePipelineSecretOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeletePipelineSecret(ctx _context.Context, secretId int64, localVarOptionals *DefaultApiDeletePipelineSecretOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -3684,8 +3684,8 @@ func (a *DefaultApiService) DeleteUser(ctx _context.Context, userId int64) (*_ne
 	return localVarHTTPResponse, nil
 }
 
-// DeleteWorkflowOpts Optional parameters for the method 'DeleteWorkflow'
-type DeleteWorkflowOpts struct {
+// DefaultApiDeleteWorkflowOpts Optional parameters for the method 'DeleteWorkflow'
+type DefaultApiDeleteWorkflowOpts struct {
     WorkspaceId optional.Int64
     Force optional.Bool
 }
@@ -3694,11 +3694,11 @@ type DeleteWorkflowOpts struct {
 DeleteWorkflow Delete the Workflow entity with the given ID
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DeleteWorkflowOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteWorkflowOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Force" (optional.Bool) -  Force the deletion even if the workflow is active
 */
-func (a *DefaultApiService) DeleteWorkflow(ctx _context.Context, workflowId string, localVarOptionals *DeleteWorkflowOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteWorkflow(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDeleteWorkflowOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -3775,8 +3775,8 @@ func (a *DefaultApiService) DeleteWorkflow(ctx _context.Context, workflowId stri
 	return localVarHTTPResponse, nil
 }
 
-// DeleteWorkflowManyOpts Optional parameters for the method 'DeleteWorkflowMany'
-type DeleteWorkflowManyOpts struct {
+// DefaultApiDeleteWorkflowManyOpts Optional parameters for the method 'DeleteWorkflowMany'
+type DefaultApiDeleteWorkflowManyOpts struct {
     WorkspaceId optional.Int64
     Force optional.Bool
 }
@@ -3785,12 +3785,12 @@ type DeleteWorkflowManyOpts struct {
 DeleteWorkflowMany Delete several workflow entities given their ids
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param deleteWorkflowsRequest Delete workflows request
- * @param optional nil or *DeleteWorkflowManyOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteWorkflowManyOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Force" (optional.Bool) -  Force the deletion even if any workflows are active
 @return DeleteWorkflowsResponse
 */
-func (a *DefaultApiService) DeleteWorkflowMany(ctx _context.Context, deleteWorkflowsRequest DeleteWorkflowsRequest, localVarOptionals *DeleteWorkflowManyOpts) (DeleteWorkflowsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteWorkflowMany(ctx _context.Context, deleteWorkflowsRequest DeleteWorkflowsRequest, localVarOptionals *DefaultApiDeleteWorkflowManyOpts) (DeleteWorkflowsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -3887,8 +3887,8 @@ func (a *DefaultApiService) DeleteWorkflowMany(ctx _context.Context, deleteWorkf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DeleteWorkflowStarOpts Optional parameters for the method 'DeleteWorkflowStar'
-type DeleteWorkflowStarOpts struct {
+// DefaultApiDeleteWorkflowStarOpts Optional parameters for the method 'DeleteWorkflowStar'
+type DefaultApiDeleteWorkflowStarOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -3896,11 +3896,11 @@ type DeleteWorkflowStarOpts struct {
 DeleteWorkflowStar Unstar a workflow
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DeleteWorkflowStarOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDeleteWorkflowStarOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateWorkflowStarResponse
 */
-func (a *DefaultApiService) DeleteWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *DeleteWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DeleteWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDeleteWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodDelete
 		localVarPostBody     interface{}
@@ -4154,8 +4154,8 @@ func (a *DefaultApiService) DeleteWorkspaceParticipant(ctx _context.Context, org
 	return localVarHTTPResponse, nil
 }
 
-// DescribeActionOpts Optional parameters for the method 'DescribeAction'
-type DescribeActionOpts struct {
+// DefaultApiDescribeActionOpts Optional parameters for the method 'DescribeAction'
+type DefaultApiDescribeActionOpts struct {
     WorkspaceId optional.Int64
     Attributes optional.Interface
 }
@@ -4164,12 +4164,12 @@ type DescribeActionOpts struct {
 DescribeAction Describe an existing Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param actionId Action string identifier
- * @param optional nil or *DescribeActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Attributes" (optional.Interface of []ActionQueryAttribute) -  Comma-separated list of attributes to retrieve: `labels`. Empty to retrieve nothing 
 @return DescribeActionResponse
 */
-func (a *DefaultApiService) DescribeAction(ctx _context.Context, actionId string, localVarOptionals *DescribeActionOpts) (DescribeActionResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeAction(ctx _context.Context, actionId string, localVarOptionals *DefaultApiDescribeActionOpts) (DescribeActionResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -4274,8 +4274,8 @@ func (a *DefaultApiService) DescribeAction(ctx _context.Context, actionId string
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeComputeEnvOpts Optional parameters for the method 'DescribeComputeEnv'
-type DescribeComputeEnvOpts struct {
+// DefaultApiDescribeComputeEnvOpts Optional parameters for the method 'DescribeComputeEnv'
+type DefaultApiDescribeComputeEnvOpts struct {
     WorkspaceId optional.Int64
     Attributes optional.Interface
 }
@@ -4284,12 +4284,12 @@ type DescribeComputeEnvOpts struct {
 DescribeComputeEnv Describe a Tower compute environment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param computeEnvId Compute environment string identifier
- * @param optional nil or *DescribeComputeEnvOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeComputeEnvOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Attributes" (optional.Interface of []ComputeEnvQueryAttribute) -  Comma-separated list of attributes to retrieve: `labels`. Empty to retrieve nothing 
 @return DescribeComputeEnvResponse
 */
-func (a *DefaultApiService) DescribeComputeEnv(ctx _context.Context, computeEnvId string, localVarOptionals *DescribeComputeEnvOpts) (DescribeComputeEnvResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeComputeEnv(ctx _context.Context, computeEnvId string, localVarOptionals *DefaultApiDescribeComputeEnvOpts) (DescribeComputeEnvResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -4394,8 +4394,8 @@ func (a *DefaultApiService) DescribeComputeEnv(ctx _context.Context, computeEnvI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeCredentialsOpts Optional parameters for the method 'DescribeCredentials'
-type DescribeCredentialsOpts struct {
+// DefaultApiDescribeCredentialsOpts Optional parameters for the method 'DescribeCredentials'
+type DefaultApiDescribeCredentialsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -4403,11 +4403,11 @@ type DescribeCredentialsOpts struct {
 DescribeCredentials Describe the credentials for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param credentialsId Credentials string identifier
- * @param optional nil or *DescribeCredentialsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeCredentialsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribeCredentialsResponse
 */
-func (a *DefaultApiService) DescribeCredentials(ctx _context.Context, credentialsId string, localVarOptionals *DescribeCredentialsOpts) (DescribeCredentialsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeCredentials(ctx _context.Context, credentialsId string, localVarOptionals *DefaultApiDescribeCredentialsOpts) (DescribeCredentialsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -4601,8 +4601,8 @@ func (a *DefaultApiService) DescribeDataset(ctx _context.Context, workspaceId in
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeLaunchOpts Optional parameters for the method 'DescribeLaunch'
-type DescribeLaunchOpts struct {
+// DefaultApiDescribeLaunchOpts Optional parameters for the method 'DescribeLaunch'
+type DefaultApiDescribeLaunchOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -4610,11 +4610,11 @@ type DescribeLaunchOpts struct {
 DescribeLaunch Describe the Launch record for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param launchId Launch string identifier
- * @param optional nil or *DescribeLaunchOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeLaunchOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribeLaunchResponse
 */
-func (a *DefaultApiService) DescribeLaunch(ctx _context.Context, launchId string, localVarOptionals *DescribeLaunchOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeLaunch(ctx _context.Context, launchId string, localVarOptionals *DefaultApiDescribeLaunchOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -4805,8 +4805,8 @@ func (a *DefaultApiService) DescribeOrganization(ctx _context.Context, orgId int
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePipelineOpts Optional parameters for the method 'DescribePipeline'
-type DescribePipelineOpts struct {
+// DefaultApiDescribePipelineOpts Optional parameters for the method 'DescribePipeline'
+type DefaultApiDescribePipelineOpts struct {
     Attributes optional.Interface
     WorkspaceId optional.Int64
     SourceWorkspaceId optional.Int64
@@ -4816,13 +4816,13 @@ type DescribePipelineOpts struct {
 DescribePipeline Describe a Pipeline
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param pipelineId Pipeline numeric identifier
- * @param optional nil or *DescribePipelineOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePipelineOpts - Optional Parameters:
  * @param "Attributes" (optional.Interface of []PipelineQueryAttribute) -  Comma-separated list of attributes to retrieve. Empty to retrieve nothing 
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "SourceWorkspaceId" (optional.Int64) -  Source workspace numeric identifier
 @return DescribePipelineResponse
 */
-func (a *DefaultApiService) DescribePipeline(ctx _context.Context, pipelineId int64, localVarOptionals *DescribePipelineOpts) (DescribePipelineResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePipeline(ctx _context.Context, pipelineId int64, localVarOptionals *DefaultApiDescribePipelineOpts) (DescribePipelineResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -4922,8 +4922,8 @@ func (a *DefaultApiService) DescribePipeline(ctx _context.Context, pipelineId in
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePipelineLaunchOpts Optional parameters for the method 'DescribePipelineLaunch'
-type DescribePipelineLaunchOpts struct {
+// DefaultApiDescribePipelineLaunchOpts Optional parameters for the method 'DescribePipelineLaunch'
+type DefaultApiDescribePipelineLaunchOpts struct {
     WorkspaceId optional.Int64
     SourceWorkspaceId optional.Int64
 }
@@ -4932,12 +4932,12 @@ type DescribePipelineLaunchOpts struct {
 DescribePipelineLaunch Describe a Pipeline launch
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param pipelineId Pipeline numeric identifier
- * @param optional nil or *DescribePipelineLaunchOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePipelineLaunchOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "SourceWorkspaceId" (optional.Int64) -  Source workspace numeric identifier
 @return DescribeLaunchResponse
 */
-func (a *DefaultApiService) DescribePipelineLaunch(ctx _context.Context, pipelineId int64, localVarOptionals *DescribePipelineLaunchOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePipelineLaunch(ctx _context.Context, pipelineId int64, localVarOptionals *DefaultApiDescribePipelineLaunchOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5034,8 +5034,8 @@ func (a *DefaultApiService) DescribePipelineLaunch(ctx _context.Context, pipelin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePipelineRepositoryOpts Optional parameters for the method 'DescribePipelineRepository'
-type DescribePipelineRepositoryOpts struct {
+// DefaultApiDescribePipelineRepositoryOpts Optional parameters for the method 'DescribePipelineRepository'
+type DefaultApiDescribePipelineRepositoryOpts struct {
     Name optional.String
     Revision optional.String
     WorkspaceId optional.Int64
@@ -5044,13 +5044,13 @@ type DescribePipelineRepositoryOpts struct {
 /*
 DescribePipelineRepository Describe the Pipeline entity for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *DescribePipelineRepositoryOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePipelineRepositoryOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Pipeline name
  * @param "Revision" (optional.String) -  Pipeline revision
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribePipelineInfoResponse
 */
-func (a *DefaultApiService) DescribePipelineRepository(ctx _context.Context, localVarOptionals *DescribePipelineRepositoryOpts) (DescribePipelineInfoResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePipelineRepository(ctx _context.Context, localVarOptionals *DefaultApiDescribePipelineRepositoryOpts) (DescribePipelineInfoResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5148,8 +5148,8 @@ func (a *DefaultApiService) DescribePipelineRepository(ctx _context.Context, loc
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePipelineSchemaOpts Optional parameters for the method 'DescribePipelineSchema'
-type DescribePipelineSchemaOpts struct {
+// DefaultApiDescribePipelineSchemaOpts Optional parameters for the method 'DescribePipelineSchema'
+type DefaultApiDescribePipelineSchemaOpts struct {
     WorkspaceId optional.Int64
     SourceWorkspaceId optional.Int64
     Attributes optional.Interface
@@ -5159,13 +5159,13 @@ type DescribePipelineSchemaOpts struct {
 DescribePipelineSchema Retrieve the Pipeline input schema
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param pipelineId Pipeline numeric identifier
- * @param optional nil or *DescribePipelineSchemaOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePipelineSchemaOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "SourceWorkspaceId" (optional.Int64) -  Source workspace numeric identifier
  * @param "Attributes" (optional.Interface of []PipelineSchemaAttributes) -  Comma-separated list of attributes to retrieve: `schema` or `params`. Empty to retrieve all of them
 @return PipelineSchemaResponse
 */
-func (a *DefaultApiService) DescribePipelineSchema(ctx _context.Context, pipelineId int64, localVarOptionals *DescribePipelineSchemaOpts) (PipelineSchemaResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePipelineSchema(ctx _context.Context, pipelineId int64, localVarOptionals *DefaultApiDescribePipelineSchemaOpts) (PipelineSchemaResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5265,8 +5265,8 @@ func (a *DefaultApiService) DescribePipelineSchema(ctx _context.Context, pipelin
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePipelineSecretOpts Optional parameters for the method 'DescribePipelineSecret'
-type DescribePipelineSecretOpts struct {
+// DefaultApiDescribePipelineSecretOpts Optional parameters for the method 'DescribePipelineSecret'
+type DefaultApiDescribePipelineSecretOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -5274,11 +5274,11 @@ type DescribePipelineSecretOpts struct {
 DescribePipelineSecret Fetch a single pipeline secret
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param secretId Secret numeric identifier
- * @param optional nil or *DescribePipelineSecretOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePipelineSecretOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribePipelineSecretResponse
 */
-func (a *DefaultApiService) DescribePipelineSecret(ctx _context.Context, secretId int64, localVarOptionals *DescribePipelineSecretOpts) (DescribePipelineSecretResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePipelineSecret(ctx _context.Context, secretId int64, localVarOptionals *DefaultApiDescribePipelineSecretOpts) (DescribePipelineSecretResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5372,8 +5372,8 @@ func (a *DefaultApiService) DescribePipelineSecret(ctx _context.Context, secretI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribePlatformOpts Optional parameters for the method 'DescribePlatform'
-type DescribePlatformOpts struct {
+// DefaultApiDescribePlatformOpts Optional parameters for the method 'DescribePlatform'
+type DefaultApiDescribePlatformOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -5383,11 +5383,11 @@ DescribePlatform Describe the platform entity for the given id
  * @param platformId Platform string identifier
  * @param regionId
  * @param credentialsId
- * @param optional nil or *DescribePlatformOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribePlatformOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribePlatformResponse
 */
-func (a *DefaultApiService) DescribePlatform(ctx _context.Context, platformId string, regionId string, credentialsId string, localVarOptionals *DescribePlatformOpts) (DescribePlatformResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribePlatform(ctx _context.Context, platformId string, regionId string, credentialsId string, localVarOptionals *DefaultApiDescribePlatformOpts) (DescribePlatformResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5580,8 +5580,8 @@ func (a *DefaultApiService) DescribeUser(ctx _context.Context, userId int64) (De
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowOpts Optional parameters for the method 'DescribeWorkflow'
-type DescribeWorkflowOpts struct {
+// DefaultApiDescribeWorkflowOpts Optional parameters for the method 'DescribeWorkflow'
+type DefaultApiDescribeWorkflowOpts struct {
     WorkspaceId optional.Int64
     Attributes optional.Interface
 }
@@ -5590,12 +5590,12 @@ type DescribeWorkflowOpts struct {
 DescribeWorkflow Describe the Workflow entity for the given ID
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DescribeWorkflowOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Attributes" (optional.Interface of []WorkflowQueryAttribute) -  Comma-separated list of attributes to retrieve. Empty to retrieve nothing 
 @return DescribeWorkflowResponse
 */
-func (a *DefaultApiService) DescribeWorkflow(ctx _context.Context, workflowId string, localVarOptionals *DescribeWorkflowOpts) (DescribeWorkflowResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflow(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDescribeWorkflowOpts) (DescribeWorkflowResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5692,8 +5692,8 @@ func (a *DefaultApiService) DescribeWorkflow(ctx _context.Context, workflowId st
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowLaunchOpts Optional parameters for the method 'DescribeWorkflowLaunch'
-type DescribeWorkflowLaunchOpts struct {
+// DefaultApiDescribeWorkflowLaunchOpts Optional parameters for the method 'DescribeWorkflowLaunch'
+type DefaultApiDescribeWorkflowLaunchOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -5701,11 +5701,11 @@ type DescribeWorkflowLaunchOpts struct {
 DescribeWorkflowLaunch Describe a Workflow launch
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DescribeWorkflowLaunchOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowLaunchOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribeWorkflowLaunchResponse
 */
-func (a *DefaultApiService) DescribeWorkflowLaunch(ctx _context.Context, workflowId string, localVarOptionals *DescribeWorkflowLaunchOpts) (DescribeWorkflowLaunchResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflowLaunch(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDescribeWorkflowLaunchOpts) (DescribeWorkflowLaunchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5808,8 +5808,8 @@ func (a *DefaultApiService) DescribeWorkflowLaunch(ctx _context.Context, workflo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowMetricsOpts Optional parameters for the method 'DescribeWorkflowMetrics'
-type DescribeWorkflowMetricsOpts struct {
+// DefaultApiDescribeWorkflowMetricsOpts Optional parameters for the method 'DescribeWorkflowMetrics'
+type DefaultApiDescribeWorkflowMetricsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -5817,11 +5817,11 @@ type DescribeWorkflowMetricsOpts struct {
 DescribeWorkflowMetrics Get the execution metrics for the given Workflow ID
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DescribeWorkflowMetricsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowMetricsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return GetWorkflowMetricsResponse
 */
-func (a *DefaultApiService) DescribeWorkflowMetrics(ctx _context.Context, workflowId string, localVarOptionals *DescribeWorkflowMetricsOpts) (GetWorkflowMetricsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflowMetrics(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDescribeWorkflowMetricsOpts) (GetWorkflowMetricsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -5915,8 +5915,8 @@ func (a *DefaultApiService) DescribeWorkflowMetrics(ctx _context.Context, workfl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowProgressOpts Optional parameters for the method 'DescribeWorkflowProgress'
-type DescribeWorkflowProgressOpts struct {
+// DefaultApiDescribeWorkflowProgressOpts Optional parameters for the method 'DescribeWorkflowProgress'
+type DefaultApiDescribeWorkflowProgressOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -5924,11 +5924,11 @@ type DescribeWorkflowProgressOpts struct {
 DescribeWorkflowProgress Retrieve the execution progress for the given Workflow ID
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DescribeWorkflowProgressOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowProgressOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return GetProgressResponse
 */
-func (a *DefaultApiService) DescribeWorkflowProgress(ctx _context.Context, workflowId string, localVarOptionals *DescribeWorkflowProgressOpts) (GetProgressResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflowProgress(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDescribeWorkflowProgressOpts) (GetProgressResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -6022,8 +6022,8 @@ func (a *DefaultApiService) DescribeWorkflowProgress(ctx _context.Context, workf
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowStarOpts Optional parameters for the method 'DescribeWorkflowStar'
-type DescribeWorkflowStarOpts struct {
+// DefaultApiDescribeWorkflowStarOpts Optional parameters for the method 'DescribeWorkflowStar'
+type DefaultApiDescribeWorkflowStarOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -6031,11 +6031,11 @@ type DescribeWorkflowStarOpts struct {
 DescribeWorkflowStar Check starred status of a workflow
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DescribeWorkflowStarOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowStarOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateWorkflowStarResponse
 */
-func (a *DefaultApiService) DescribeWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *DescribeWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflowStar(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDescribeWorkflowStarOpts) (CreateWorkflowStarResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -6128,8 +6128,8 @@ func (a *DefaultApiService) DescribeWorkflowStar(ctx _context.Context, workflowI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DescribeWorkflowTaskOpts Optional parameters for the method 'DescribeWorkflowTask'
-type DescribeWorkflowTaskOpts struct {
+// DefaultApiDescribeWorkflowTaskOpts Optional parameters for the method 'DescribeWorkflowTask'
+type DefaultApiDescribeWorkflowTaskOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -6138,11 +6138,11 @@ DescribeWorkflowTask Describe a task entity with the given ID
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param taskId Task numeric identifier
- * @param optional nil or *DescribeWorkflowTaskOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDescribeWorkflowTaskOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribeTaskResponse
 */
-func (a *DefaultApiService) DescribeWorkflowTask(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *DescribeWorkflowTaskOpts) (DescribeTaskResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) DescribeWorkflowTask(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *DefaultApiDescribeWorkflowTaskOpts) (DescribeTaskResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -6550,8 +6550,8 @@ func (a *DefaultApiService) DownloadDataset(ctx _context.Context, workspaceId in
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DownloadWorkflowLogOpts Optional parameters for the method 'DownloadWorkflowLog'
-type DownloadWorkflowLogOpts struct {
+// DefaultApiDownloadWorkflowLogOpts Optional parameters for the method 'DownloadWorkflowLog'
+type DefaultApiDownloadWorkflowLogOpts struct {
     FileName optional.String
     WorkspaceId optional.Int64
 }
@@ -6560,12 +6560,12 @@ type DownloadWorkflowLogOpts struct {
 DownloadWorkflowLog Download Workflow files of the Nextflow main job
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *DownloadWorkflowLogOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDownloadWorkflowLogOpts - Optional Parameters:
  * @param "FileName" (optional.String) -  Filename to download
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return *os.File
 */
-func (a *DefaultApiService) DownloadWorkflowLog(ctx _context.Context, workflowId string, localVarOptionals *DownloadWorkflowLogOpts) (*os.File, *_nethttp.Response, error) {
+func (a *DefaultApiService) DownloadWorkflowLog(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiDownloadWorkflowLogOpts) (*os.File, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -6662,8 +6662,8 @@ func (a *DefaultApiService) DownloadWorkflowLog(ctx _context.Context, workflowId
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// DownloadWorkflowTaskLogOpts Optional parameters for the method 'DownloadWorkflowTaskLog'
-type DownloadWorkflowTaskLogOpts struct {
+// DefaultApiDownloadWorkflowTaskLogOpts Optional parameters for the method 'DownloadWorkflowTaskLog'
+type DefaultApiDownloadWorkflowTaskLogOpts struct {
     FileName optional.String
     WorkspaceId optional.Int64
 }
@@ -6673,12 +6673,12 @@ DownloadWorkflowTaskLog Download Workflow files of a given task
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param taskId Task numeric identifier
- * @param optional nil or *DownloadWorkflowTaskLogOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiDownloadWorkflowTaskLogOpts - Optional Parameters:
  * @param "FileName" (optional.String) -  Filename to download
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return *os.File
 */
-func (a *DefaultApiService) DownloadWorkflowTaskLog(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *DownloadWorkflowTaskLogOpts) (*os.File, *_nethttp.Response, error) {
+func (a *DefaultApiService) DownloadWorkflowTaskLog(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *DefaultApiDownloadWorkflowTaskLogOpts) (*os.File, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -6777,20 +6777,20 @@ func (a *DefaultApiService) DownloadWorkflowTaskLog(ctx _context.Context, workfl
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// GaRunCancelOpts Optional parameters for the method 'GaRunCancel'
-type GaRunCancelOpts struct {
-    Body optional.Map[string]interface{}
+// DefaultApiGaRunCancelOpts Optional parameters for the method 'GaRunCancel'
+type DefaultApiGaRunCancelOpts struct {
+    Body optional.Map    
 }
 
 /*
 GaRunCancel GA4GH cancel a run
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param runId Run string identifier
- * @param optional nil or *GaRunCancelOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiGaRunCancelOpts - Optional Parameters:
  * @param "Body" (optional.Map[string]interface{}) - 
 @return RunId
 */
-func (a *DefaultApiService) GaRunCancel(ctx _context.Context, runId string, localVarOptionals *GaRunCancelOpts) (RunId, *_nethttp.Response, error) {
+func (a *DefaultApiService) GaRunCancel(ctx _context.Context, runId string, localVarOptionals *DefaultApiGaRunCancelOpts) (RunId, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -7080,8 +7080,8 @@ func (a *DefaultApiService) GaRunDescribe(ctx _context.Context, runId string) (R
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// GaRunListOpts Optional parameters for the method 'GaRunList'
-type GaRunListOpts struct {
+// DefaultApiGaRunListOpts Optional parameters for the method 'GaRunList'
+type DefaultApiGaRunListOpts struct {
     PageSize optional.Int32
     PageToken optional.String
 }
@@ -7089,12 +7089,12 @@ type GaRunListOpts struct {
 /*
 GaRunList GA4GH list runs
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *GaRunListOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiGaRunListOpts - Optional Parameters:
  * @param "PageSize" (optional.Int32) -  Page size
  * @param "PageToken" (optional.String) -  Page token
 @return RunListResponse
 */
-func (a *DefaultApiService) GaRunList(ctx _context.Context, localVarOptionals *GaRunListOpts) (RunListResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) GaRunList(ctx _context.Context, localVarOptionals *DefaultApiGaRunListOpts) (RunListResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -7463,8 +7463,8 @@ func (a *DefaultApiService) GenerateRandomWorkflowName(ctx _context.Context) (Ra
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// GetWorkflowTaskLogOpts Optional parameters for the method 'GetWorkflowTaskLog'
-type GetWorkflowTaskLogOpts struct {
+// DefaultApiGetWorkflowTaskLogOpts Optional parameters for the method 'GetWorkflowTaskLog'
+type DefaultApiGetWorkflowTaskLogOpts struct {
     Next optional.String
     WorkspaceId optional.Int64
 }
@@ -7474,12 +7474,12 @@ GetWorkflowTaskLog Retrieve Workflow output logs of a given task
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param taskId Task numeric identifier
- * @param optional nil or *GetWorkflowTaskLogOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiGetWorkflowTaskLogOpts - Optional Parameters:
  * @param "Next" (optional.String) -  Workflow log cursor
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return WorkflowLogResponse
 */
-func (a *DefaultApiService) GetWorkflowTaskLog(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *GetWorkflowTaskLogOpts) (WorkflowLogResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) GetWorkflowTaskLog(ctx _context.Context, workflowId string, taskId int64, localVarOptionals *DefaultApiGetWorkflowTaskLogOpts) (WorkflowLogResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -7671,8 +7671,8 @@ func (a *DefaultApiService) Info(ctx _context.Context) (ServiceInfoResponse, *_n
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// LaunchActionOpts Optional parameters for the method 'LaunchAction'
-type LaunchActionOpts struct {
+// DefaultApiLaunchActionOpts Optional parameters for the method 'LaunchAction'
+type DefaultApiLaunchActionOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -7681,11 +7681,11 @@ LaunchAction Trigger the execution of a Tower Launch Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param actionId Action string identifier
  * @param launchActionRequest Action launch request
- * @param optional nil or *LaunchActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiLaunchActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return LaunchActionResponse
 */
-func (a *DefaultApiService) LaunchAction(ctx _context.Context, actionId string, launchActionRequest LaunchActionRequest, localVarOptionals *LaunchActionOpts) (LaunchActionResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) LaunchAction(ctx _context.Context, actionId string, launchActionRequest LaunchActionRequest, localVarOptionals *DefaultApiLaunchActionOpts) (LaunchActionResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -7936,19 +7936,19 @@ func (a *DefaultApiService) LeaveWorkspaceParticipant(ctx _context.Context, orgI
 	return localVarHTTPResponse, nil
 }
 
-// ListActionTypesOpts Optional parameters for the method 'ListActionTypes'
-type ListActionTypesOpts struct {
+// DefaultApiListActionTypesOpts Optional parameters for the method 'ListActionTypes'
+type DefaultApiListActionTypesOpts struct {
     WorkspaceId optional.Int64
 }
 
 /*
 ListActionTypes List the supported event types that can trigger a Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListActionTypesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListActionTypesOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListEventTypesResponse
 */
-func (a *DefaultApiService) ListActionTypes(ctx _context.Context, localVarOptionals *ListActionTypesOpts) (ListEventTypesResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListActionTypes(ctx _context.Context, localVarOptionals *DefaultApiListActionTypesOpts) (ListEventTypesResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8040,8 +8040,8 @@ func (a *DefaultApiService) ListActionTypes(ctx _context.Context, localVarOption
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListActionsOpts Optional parameters for the method 'ListActions'
-type ListActionsOpts struct {
+// DefaultApiListActionsOpts Optional parameters for the method 'ListActions'
+type DefaultApiListActionsOpts struct {
     WorkspaceId optional.Int64
     Attributes optional.Interface
 }
@@ -8049,12 +8049,12 @@ type ListActionsOpts struct {
 /*
 ListActions List the available Pipeline Actions for the authenticated user or given workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListActionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListActionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Attributes" (optional.Interface of []ActionQueryAttribute) -  Comma-separated list of attributes to retrieve: `labels`. Empty to retrieve nothing 
 @return ListActionsResponse
 */
-func (a *DefaultApiService) ListActions(ctx _context.Context, localVarOptionals *ListActionsOpts) (ListActionsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListActions(ctx _context.Context, localVarOptionals *DefaultApiListActionsOpts) (ListActionsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8157,8 +8157,8 @@ func (a *DefaultApiService) ListActions(ctx _context.Context, localVarOptionals 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListComputeEnvsOpts Optional parameters for the method 'ListComputeEnvs'
-type ListComputeEnvsOpts struct {
+// DefaultApiListComputeEnvsOpts Optional parameters for the method 'ListComputeEnvs'
+type DefaultApiListComputeEnvsOpts struct {
     Status optional.String
     WorkspaceId optional.Int64
 }
@@ -8166,12 +8166,12 @@ type ListComputeEnvsOpts struct {
 /*
 ListComputeEnvs List all Tower compute environments for the authenticated user or given workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListComputeEnvsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListComputeEnvsOpts - Optional Parameters:
  * @param "Status" (optional.String) -  Compute environment status
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListComputeEnvsResponse
 */
-func (a *DefaultApiService) ListComputeEnvs(ctx _context.Context, localVarOptionals *ListComputeEnvsOpts) (ListComputeEnvsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListComputeEnvs(ctx _context.Context, localVarOptionals *DefaultApiListComputeEnvsOpts) (ListComputeEnvsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8266,8 +8266,8 @@ func (a *DefaultApiService) ListComputeEnvs(ctx _context.Context, localVarOption
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListCredentialsOpts Optional parameters for the method 'ListCredentials'
-type ListCredentialsOpts struct {
+// DefaultApiListCredentialsOpts Optional parameters for the method 'ListCredentials'
+type DefaultApiListCredentialsOpts struct {
     WorkspaceId optional.Int64
     PlatformId optional.String
 }
@@ -8275,12 +8275,12 @@ type ListCredentialsOpts struct {
 /*
 ListCredentials List available credentials for the authenticated user or given workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListCredentialsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListCredentialsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "PlatformId" (optional.String) -  Platform string identifier
 @return ListCredentialsResponse
 */
-func (a *DefaultApiService) ListCredentials(ctx _context.Context, localVarOptionals *ListCredentialsOpts) (ListCredentialsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListCredentials(ctx _context.Context, localVarOptionals *DefaultApiListCredentialsOpts) (ListCredentialsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8375,8 +8375,8 @@ func (a *DefaultApiService) ListCredentials(ctx _context.Context, localVarOption
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListDatasetVersionsOpts Optional parameters for the method 'ListDatasetVersions'
-type ListDatasetVersionsOpts struct {
+// DefaultApiListDatasetVersionsOpts Optional parameters for the method 'ListDatasetVersions'
+type DefaultApiListDatasetVersionsOpts struct {
     MimeType optional.String
 }
 
@@ -8385,11 +8385,11 @@ ListDatasetVersions List all versions of a dataset
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workspaceId Workspace numeric identifier
  * @param datasetId Dataset string identifier
- * @param optional nil or *ListDatasetVersionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListDatasetVersionsOpts - Optional Parameters:
  * @param "MimeType" (optional.String) -  Optional MIME type filter
 @return ListDatasetVersionsResponse
 */
-func (a *DefaultApiService) ListDatasetVersions(ctx _context.Context, workspaceId int64, datasetId string, localVarOptionals *ListDatasetVersionsOpts) (ListDatasetVersionsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListDatasetVersions(ctx _context.Context, workspaceId int64, datasetId string, localVarOptionals *DefaultApiListDatasetVersionsOpts) (ListDatasetVersionsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8582,8 +8582,8 @@ func (a *DefaultApiService) ListDatasets(ctx _context.Context, workspaceId int64
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListLabelsOpts Optional parameters for the method 'ListLabels'
-type ListLabelsOpts struct {
+// DefaultApiListLabelsOpts Optional parameters for the method 'ListLabels'
+type DefaultApiListLabelsOpts struct {
     WorkspaceId optional.Int64
     Max optional.Int32
     Offset optional.Int32
@@ -8594,7 +8594,7 @@ type ListLabelsOpts struct {
 /*
 ListLabels List the labels of the authenticated user or a workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListLabelsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListLabelsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
@@ -8602,7 +8602,7 @@ ListLabels List the labels of the authenticated user or a workspace
  * @param "Type_" (optional.Interface of WorkflowQueryAttribute) -  Labels type
 @return ListWorkspacesResponse
 */
-func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *ListLabelsOpts) (ListWorkspacesResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *DefaultApiListLabelsOpts) (ListWorkspacesResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8706,8 +8706,8 @@ func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListLaunchDatasetVersionsOpts Optional parameters for the method 'ListLaunchDatasetVersions'
-type ListLaunchDatasetVersionsOpts struct {
+// DefaultApiListLaunchDatasetVersionsOpts Optional parameters for the method 'ListLaunchDatasetVersions'
+type DefaultApiListLaunchDatasetVersionsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -8715,11 +8715,11 @@ type ListLaunchDatasetVersionsOpts struct {
 ListLaunchDatasetVersions Describe the datasets used in a launch
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param launchId Launch string identifier
- * @param optional nil or *ListLaunchDatasetVersionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListLaunchDatasetVersionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return DescribeLaunchResponse
 */
-func (a *DefaultApiService) ListLaunchDatasetVersions(ctx _context.Context, launchId string, localVarOptionals *ListLaunchDatasetVersionsOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListLaunchDatasetVersions(ctx _context.Context, launchId string, localVarOptionals *DefaultApiListLaunchDatasetVersionsOpts) (DescribeLaunchResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8803,8 +8803,8 @@ func (a *DefaultApiService) ListLaunchDatasetVersions(ctx _context.Context, laun
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListOrganizationCollaboratorsOpts Optional parameters for the method 'ListOrganizationCollaborators'
-type ListOrganizationCollaboratorsOpts struct {
+// DefaultApiListOrganizationCollaboratorsOpts Optional parameters for the method 'ListOrganizationCollaborators'
+type DefaultApiListOrganizationCollaboratorsOpts struct {
     Max optional.Int32
     Offset optional.Int32
     Search optional.String
@@ -8814,13 +8814,13 @@ type ListOrganizationCollaboratorsOpts struct {
 ListOrganizationCollaborators List all collaborators of an organization
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
- * @param optional nil or *ListOrganizationCollaboratorsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListOrganizationCollaboratorsOpts - Optional Parameters:
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
  * @param "Search" (optional.String) -  Filter search param
 @return ListMembersResponse
 */
-func (a *DefaultApiService) ListOrganizationCollaborators(ctx _context.Context, orgId int64, localVarOptionals *ListOrganizationCollaboratorsOpts) (ListMembersResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListOrganizationCollaborators(ctx _context.Context, orgId int64, localVarOptionals *DefaultApiListOrganizationCollaboratorsOpts) (ListMembersResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -8920,8 +8920,8 @@ func (a *DefaultApiService) ListOrganizationCollaborators(ctx _context.Context, 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListOrganizationMembersOpts Optional parameters for the method 'ListOrganizationMembers'
-type ListOrganizationMembersOpts struct {
+// DefaultApiListOrganizationMembersOpts Optional parameters for the method 'ListOrganizationMembers'
+type DefaultApiListOrganizationMembersOpts struct {
     Max optional.Int32
     Offset optional.Int32
     Search optional.String
@@ -8931,13 +8931,13 @@ type ListOrganizationMembersOpts struct {
 ListOrganizationMembers List all members of an organization
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
- * @param optional nil or *ListOrganizationMembersOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListOrganizationMembersOpts - Optional Parameters:
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
  * @param "Search" (optional.String) -  Filter search param
 @return ListMembersResponse
 */
-func (a *DefaultApiService) ListOrganizationMembers(ctx _context.Context, orgId int64, localVarOptionals *ListOrganizationMembersOpts) (ListMembersResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListOrganizationMembers(ctx _context.Context, orgId int64, localVarOptionals *DefaultApiListOrganizationMembersOpts) (ListMembersResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9037,8 +9037,8 @@ func (a *DefaultApiService) ListOrganizationMembers(ctx _context.Context, orgId 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListOrganizationTeamMembersOpts Optional parameters for the method 'ListOrganizationTeamMembers'
-type ListOrganizationTeamMembersOpts struct {
+// DefaultApiListOrganizationTeamMembersOpts Optional parameters for the method 'ListOrganizationTeamMembers'
+type DefaultApiListOrganizationTeamMembersOpts struct {
     Max optional.Int32
     Offset optional.Int32
     Search optional.String
@@ -9049,13 +9049,13 @@ ListOrganizationTeamMembers List all the members of a team
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
  * @param teamId Team numeric identifier
- * @param optional nil or *ListOrganizationTeamMembersOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListOrganizationTeamMembersOpts - Optional Parameters:
  * @param "Max" (optional.Int32) - 
  * @param "Offset" (optional.Int32) - 
  * @param "Search" (optional.String) - 
 @return ListMembersResponse
 */
-func (a *DefaultApiService) ListOrganizationTeamMembers(ctx _context.Context, orgId int64, teamId int64, localVarOptionals *ListOrganizationTeamMembersOpts) (ListMembersResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListOrganizationTeamMembers(ctx _context.Context, orgId int64, teamId int64, localVarOptionals *DefaultApiListOrganizationTeamMembersOpts) (ListMembersResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9157,8 +9157,8 @@ func (a *DefaultApiService) ListOrganizationTeamMembers(ctx _context.Context, or
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListOrganizationTeamsOpts Optional parameters for the method 'ListOrganizationTeams'
-type ListOrganizationTeamsOpts struct {
+// DefaultApiListOrganizationTeamsOpts Optional parameters for the method 'ListOrganizationTeams'
+type DefaultApiListOrganizationTeamsOpts struct {
     Max optional.Int32
     Offset optional.Int32
 }
@@ -9167,12 +9167,12 @@ type ListOrganizationTeamsOpts struct {
 ListOrganizationTeams List all the teams of a given organization
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
- * @param optional nil or *ListOrganizationTeamsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListOrganizationTeamsOpts - Optional Parameters:
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
 @return ListTeamResponse
 */
-func (a *DefaultApiService) ListOrganizationTeams(ctx _context.Context, orgId int64, localVarOptionals *ListOrganizationTeamsOpts) (ListTeamResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListOrganizationTeams(ctx _context.Context, orgId int64, localVarOptionals *DefaultApiListOrganizationTeamsOpts) (ListTeamResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9269,19 +9269,19 @@ func (a *DefaultApiService) ListOrganizationTeams(ctx _context.Context, orgId in
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListOrganizationsOpts Optional parameters for the method 'ListOrganizations'
-type ListOrganizationsOpts struct {
+// DefaultApiListOrganizationsOpts Optional parameters for the method 'ListOrganizations'
+type DefaultApiListOrganizationsOpts struct {
     Role optional.String
 }
 
 /*
 ListOrganizations List available organizations
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListOrganizationsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListOrganizationsOpts - Optional Parameters:
  * @param "Role" (optional.String) -  Organization user role identifier
 @return ListOrganizationsResponse
 */
-func (a *DefaultApiService) ListOrganizations(ctx _context.Context, localVarOptionals *ListOrganizationsOpts) (ListOrganizationsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListOrganizations(ctx _context.Context, localVarOptionals *DefaultApiListOrganizationsOpts) (ListOrganizationsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9373,19 +9373,19 @@ func (a *DefaultApiService) ListOrganizations(ctx _context.Context, localVarOpti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListPipelineRepositoriesOpts Optional parameters for the method 'ListPipelineRepositories'
-type ListPipelineRepositoriesOpts struct {
+// DefaultApiListPipelineRepositoriesOpts Optional parameters for the method 'ListPipelineRepositories'
+type DefaultApiListPipelineRepositoriesOpts struct {
     WorkspaceId optional.Int64
 }
 
 /*
 ListPipelineRepositories List Pipelines accessible to the authenticated user
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListPipelineRepositoriesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListPipelineRepositoriesOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListPipelineInfoResponse
 */
-func (a *DefaultApiService) ListPipelineRepositories(ctx _context.Context, localVarOptionals *ListPipelineRepositoriesOpts) (ListPipelineInfoResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListPipelineRepositories(ctx _context.Context, localVarOptionals *DefaultApiListPipelineRepositoriesOpts) (ListPipelineInfoResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9477,19 +9477,19 @@ func (a *DefaultApiService) ListPipelineRepositories(ctx _context.Context, local
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListPipelineSecretsOpts Optional parameters for the method 'ListPipelineSecrets'
-type ListPipelineSecretsOpts struct {
+// DefaultApiListPipelineSecretsOpts Optional parameters for the method 'ListPipelineSecrets'
+type DefaultApiListPipelineSecretsOpts struct {
     WorkspaceId optional.Int64
 }
 
 /*
 ListPipelineSecrets List all pipeline secrets in the workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListPipelineSecretsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListPipelineSecretsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListPipelineSecretsResponse
 */
-func (a *DefaultApiService) ListPipelineSecrets(ctx _context.Context, localVarOptionals *ListPipelineSecretsOpts) (ListPipelineSecretsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListPipelineSecrets(ctx _context.Context, localVarOptionals *DefaultApiListPipelineSecretsOpts) (ListPipelineSecretsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9581,8 +9581,8 @@ func (a *DefaultApiService) ListPipelineSecrets(ctx _context.Context, localVarOp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListPipelinesOpts Optional parameters for the method 'ListPipelines'
-type ListPipelinesOpts struct {
+// DefaultApiListPipelinesOpts Optional parameters for the method 'ListPipelines'
+type DefaultApiListPipelinesOpts struct {
     Attributes optional.Interface
     WorkspaceId optional.Int64
     Max optional.Int32
@@ -9594,7 +9594,7 @@ type ListPipelinesOpts struct {
 /*
 ListPipelines List all the Pipelines of a workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListPipelinesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListPipelinesOpts - Optional Parameters:
  * @param "Attributes" (optional.Interface of []PipelineQueryAttribute) -  Comma-separated list of attributes to retrieve. Empty to retrieve nothing 
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Max" (optional.Int32) -  Pagination result max result
@@ -9603,7 +9603,7 @@ ListPipelines List all the Pipelines of a workspace
  * @param "Visibility" (optional.String) -  Filter visibility param
 @return ListPipelinesResponse
 */
-func (a *DefaultApiService) ListPipelines(ctx _context.Context, localVarOptionals *ListPipelinesOpts) (ListPipelinesResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListPipelines(ctx _context.Context, localVarOptionals *DefaultApiListPipelinesOpts) (ListPipelinesResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9710,8 +9710,8 @@ func (a *DefaultApiService) ListPipelines(ctx _context.Context, localVarOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListPlatformRegionsOpts Optional parameters for the method 'ListPlatformRegions'
-type ListPlatformRegionsOpts struct {
+// DefaultApiListPlatformRegionsOpts Optional parameters for the method 'ListPlatformRegions'
+type DefaultApiListPlatformRegionsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -9719,11 +9719,11 @@ type ListPlatformRegionsOpts struct {
 ListPlatformRegions List available regions for the platform specified
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param platformId Platform string identifier
- * @param optional nil or *ListPlatformRegionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListPlatformRegionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListRegionsResponse
 */
-func (a *DefaultApiService) ListPlatformRegions(ctx _context.Context, platformId string, localVarOptionals *ListPlatformRegionsOpts) (ListRegionsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListPlatformRegions(ctx _context.Context, platformId string, localVarOptionals *DefaultApiListPlatformRegionsOpts) (ListRegionsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9817,19 +9817,19 @@ func (a *DefaultApiService) ListPlatformRegions(ctx _context.Context, platformId
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListPlatformsOpts Optional parameters for the method 'ListPlatforms'
-type ListPlatformsOpts struct {
+// DefaultApiListPlatformsOpts Optional parameters for the method 'ListPlatforms'
+type DefaultApiListPlatformsOpts struct {
     WorkspaceId optional.Int64
 }
 
 /*
 ListPlatforms List available computing platforms
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListPlatformsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListPlatformsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return ListPlatformsResponse
 */
-func (a *DefaultApiService) ListPlatforms(ctx _context.Context, localVarOptionals *ListPlatformsOpts) (ListPlatformsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListPlatforms(ctx _context.Context, localVarOptionals *DefaultApiListPlatformsOpts) (ListPlatformsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -9921,8 +9921,8 @@ func (a *DefaultApiService) ListPlatforms(ctx _context.Context, localVarOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListWorkflowTasksOpts Optional parameters for the method 'ListWorkflowTasks'
-type ListWorkflowTasksOpts struct {
+// DefaultApiListWorkflowTasksOpts Optional parameters for the method 'ListWorkflowTasks'
+type DefaultApiListWorkflowTasksOpts struct {
     WorkspaceId optional.Int64
     Max optional.Int32
     Offset optional.Int32
@@ -9935,7 +9935,7 @@ type ListWorkflowTasksOpts struct {
 ListWorkflowTasks List the tasks for the given Workflow ID and filter parameters
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *ListWorkflowTasksOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListWorkflowTasksOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
@@ -9944,7 +9944,7 @@ ListWorkflowTasks List the tasks for the given Workflow ID and filter parameters
  * @param "Search" (optional.String) -  Search tasks by name
 @return ListTasksResponse
 */
-func (a *DefaultApiService) ListWorkflowTasks(ctx _context.Context, workflowId string, localVarOptionals *ListWorkflowTasksOpts) (ListTasksResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListWorkflowTasks(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiListWorkflowTasksOpts) (ListTasksResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -10053,8 +10053,8 @@ func (a *DefaultApiService) ListWorkflowTasks(ctx _context.Context, workflowId s
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListWorkflowsOpts Optional parameters for the method 'ListWorkflows'
-type ListWorkflowsOpts struct {
+// DefaultApiListWorkflowsOpts Optional parameters for the method 'ListWorkflows'
+type DefaultApiListWorkflowsOpts struct {
     Attributes optional.Interface
     WorkspaceId optional.Int64
     Max optional.Int32
@@ -10065,7 +10065,7 @@ type ListWorkflowsOpts struct {
 /*
 ListWorkflows List Workflow records matching the filter parameters
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ListWorkflowsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListWorkflowsOpts - Optional Parameters:
  * @param "Attributes" (optional.Interface of []WorkflowQueryAttribute) -  Comma-separated list of attributes to retrieve. Empty to retrieve nothing 
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Max" (optional.Int32) -  Pagination result max result
@@ -10073,7 +10073,7 @@ ListWorkflows List Workflow records matching the filter parameters
  * @param "Search" (optional.String) -  Filter search param
 @return ListWorkflowsResponse
 */
-func (a *DefaultApiService) ListWorkflows(ctx _context.Context, localVarOptionals *ListWorkflowsOpts) (ListWorkflowsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListWorkflows(ctx _context.Context, localVarOptionals *DefaultApiListWorkflowsOpts) (ListWorkflowsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -10177,8 +10177,8 @@ func (a *DefaultApiService) ListWorkflows(ctx _context.Context, localVarOptional
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListWorkspaceDatasetVersionsOpts Optional parameters for the method 'ListWorkspaceDatasetVersions'
-type ListWorkspaceDatasetVersionsOpts struct {
+// DefaultApiListWorkspaceDatasetVersionsOpts Optional parameters for the method 'ListWorkspaceDatasetVersions'
+type DefaultApiListWorkspaceDatasetVersionsOpts struct {
     MimeType optional.String
 }
 
@@ -10186,11 +10186,11 @@ type ListWorkspaceDatasetVersionsOpts struct {
 ListWorkspaceDatasetVersions List the latest version of each dataset in the workspace
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workspaceId Workspace numeric identifier
- * @param optional nil or *ListWorkspaceDatasetVersionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListWorkspaceDatasetVersionsOpts - Optional Parameters:
  * @param "MimeType" (optional.String) - 
 @return ListDatasetVersionsResponse
 */
-func (a *DefaultApiService) ListWorkspaceDatasetVersions(ctx _context.Context, workspaceId int64, localVarOptionals *ListWorkspaceDatasetVersionsOpts) (ListDatasetVersionsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListWorkspaceDatasetVersions(ctx _context.Context, workspaceId int64, localVarOptionals *DefaultApiListWorkspaceDatasetVersionsOpts) (ListDatasetVersionsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -10284,8 +10284,8 @@ func (a *DefaultApiService) ListWorkspaceDatasetVersions(ctx _context.Context, w
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ListWorkspaceParticipantsOpts Optional parameters for the method 'ListWorkspaceParticipants'
-type ListWorkspaceParticipantsOpts struct {
+// DefaultApiListWorkspaceParticipantsOpts Optional parameters for the method 'ListWorkspaceParticipants'
+type DefaultApiListWorkspaceParticipantsOpts struct {
     Max optional.Int32
     Offset optional.Int32
     Search optional.String
@@ -10296,13 +10296,13 @@ ListWorkspaceParticipants List workspace participants
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
  * @param workspaceId Workspace numeric identifier
- * @param optional nil or *ListWorkspaceParticipantsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiListWorkspaceParticipantsOpts - Optional Parameters:
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
  * @param "Search" (optional.String) -  Filter search param
 @return ListParticipantsResponse
 */
-func (a *DefaultApiService) ListWorkspaceParticipants(ctx _context.Context, orgId int64, workspaceId int64, localVarOptionals *ListWorkspaceParticipantsOpts) (ListParticipantsResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListWorkspaceParticipants(ctx _context.Context, orgId int64, workspaceId int64, localVarOptionals *DefaultApiListWorkspaceParticipantsOpts) (ListParticipantsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -10598,21 +10598,21 @@ func (a *DefaultApiService) ListWorkspacesUser(ctx _context.Context, userId int6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// PauseActionOpts Optional parameters for the method 'PauseAction'
-type PauseActionOpts struct {
+// DefaultApiPauseActionOpts Optional parameters for the method 'PauseAction'
+type DefaultApiPauseActionOpts struct {
     WorkspaceId optional.Int64
-    Body optional.Map[string]interface{}
+    Body optional.Map    
 }
 
 /*
 PauseAction Toggle the pause status of an existing Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param actionId Action string identifier
- * @param optional nil or *PauseActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiPauseActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Body" (optional.Map[string]interface{}) - 
 */
-func (a *DefaultApiService) PauseAction(ctx _context.Context, actionId string, localVarOptionals *PauseActionOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) PauseAction(ctx _context.Context, actionId string, localVarOptionals *DefaultApiPauseActionOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -10774,8 +10774,8 @@ func (a *DefaultApiService) Profile(ctx _context.Context) (DescribeUserResponse,
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// RemoveLabelsFromActionsOpts Optional parameters for the method 'RemoveLabelsFromActions'
-type RemoveLabelsFromActionsOpts struct {
+// DefaultApiRemoveLabelsFromActionsOpts Optional parameters for the method 'RemoveLabelsFromActions'
+type DefaultApiRemoveLabelsFromActionsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -10783,10 +10783,10 @@ type RemoveLabelsFromActionsOpts struct {
 RemoveLabelsFromActions Remove some labels from some actions
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateActionLabelsRequest Labels remove request
- * @param optional nil or *RemoveLabelsFromActionsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiRemoveLabelsFromActionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) RemoveLabelsFromActions(ctx _context.Context, associateActionLabelsRequest AssociateActionLabelsRequest, localVarOptionals *RemoveLabelsFromActionsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) RemoveLabelsFromActions(ctx _context.Context, associateActionLabelsRequest AssociateActionLabelsRequest, localVarOptionals *DefaultApiRemoveLabelsFromActionsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -10850,8 +10850,8 @@ func (a *DefaultApiService) RemoveLabelsFromActions(ctx _context.Context, associ
 	return localVarHTTPResponse, nil
 }
 
-// RemoveLabelsFromPipelinesOpts Optional parameters for the method 'RemoveLabelsFromPipelines'
-type RemoveLabelsFromPipelinesOpts struct {
+// DefaultApiRemoveLabelsFromPipelinesOpts Optional parameters for the method 'RemoveLabelsFromPipelines'
+type DefaultApiRemoveLabelsFromPipelinesOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -10859,10 +10859,10 @@ type RemoveLabelsFromPipelinesOpts struct {
 RemoveLabelsFromPipelines Remove some labels from some pipelines
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associatePipelineLabelsRequest Labels remove request
- * @param optional nil or *RemoveLabelsFromPipelinesOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiRemoveLabelsFromPipelinesOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) RemoveLabelsFromPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *RemoveLabelsFromPipelinesOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) RemoveLabelsFromPipelines(ctx _context.Context, associatePipelineLabelsRequest AssociatePipelineLabelsRequest, localVarOptionals *DefaultApiRemoveLabelsFromPipelinesOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -10926,8 +10926,8 @@ func (a *DefaultApiService) RemoveLabelsFromPipelines(ctx _context.Context, asso
 	return localVarHTTPResponse, nil
 }
 
-// RemoveLabelsFromWorkflowsOpts Optional parameters for the method 'RemoveLabelsFromWorkflows'
-type RemoveLabelsFromWorkflowsOpts struct {
+// DefaultApiRemoveLabelsFromWorkflowsOpts Optional parameters for the method 'RemoveLabelsFromWorkflows'
+type DefaultApiRemoveLabelsFromWorkflowsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -10935,10 +10935,10 @@ type RemoveLabelsFromWorkflowsOpts struct {
 RemoveLabelsFromWorkflows Remove some labels from some workflows
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param associateWorkflowLabelsRequest Labels remove request
- * @param optional nil or *RemoveLabelsFromWorkflowsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiRemoveLabelsFromWorkflowsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) RemoveLabelsFromWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *RemoveLabelsFromWorkflowsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) RemoveLabelsFromWorkflows(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *DefaultApiRemoveLabelsFromWorkflowsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -11096,8 +11096,8 @@ func (a *DefaultApiService) TokenList(ctx _context.Context) (ListAccessTokensRes
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// UpdateActionOpts Optional parameters for the method 'UpdateAction'
-type UpdateActionOpts struct {
+// DefaultApiUpdateActionOpts Optional parameters for the method 'UpdateAction'
+type DefaultApiUpdateActionOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11106,10 +11106,10 @@ UpdateAction Update a Pipeline Action
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param actionId Action string identifier
  * @param updateActionRequest Action update request
- * @param optional nil or *UpdateActionOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateActionOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) UpdateAction(ctx _context.Context, actionId string, updateActionRequest UpdateActionRequest, localVarOptionals *UpdateActionOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateAction(ctx _context.Context, actionId string, updateActionRequest UpdateActionRequest, localVarOptionals *DefaultApiUpdateActionOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -11185,21 +11185,21 @@ func (a *DefaultApiService) UpdateAction(ctx _context.Context, actionId string, 
 	return localVarHTTPResponse, nil
 }
 
-// UpdateComputeEnvPrimaryOpts Optional parameters for the method 'UpdateComputeEnvPrimary'
-type UpdateComputeEnvPrimaryOpts struct {
+// DefaultApiUpdateComputeEnvPrimaryOpts Optional parameters for the method 'UpdateComputeEnvPrimary'
+type DefaultApiUpdateComputeEnvPrimaryOpts struct {
     WorkspaceId optional.Int64
-    Body optional.Map[string]interface{}
+    Body optional.Map    
 }
 
 /*
 UpdateComputeEnvPrimary Defines the primary Tower compute environment
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param computeEnvId Compute environment string identifier
- * @param optional nil or *UpdateComputeEnvPrimaryOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateComputeEnvPrimaryOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Body" (optional.Map[string]interface{}) - 
 */
-func (a *DefaultApiService) UpdateComputeEnvPrimary(ctx _context.Context, computeEnvId string, localVarOptionals *UpdateComputeEnvPrimaryOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateComputeEnvPrimary(ctx _context.Context, computeEnvId string, localVarOptionals *DefaultApiUpdateComputeEnvPrimaryOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -11278,8 +11278,8 @@ func (a *DefaultApiService) UpdateComputeEnvPrimary(ctx _context.Context, comput
 	return localVarHTTPResponse, nil
 }
 
-// UpdateCredentialsOpts Optional parameters for the method 'UpdateCredentials'
-type UpdateCredentialsOpts struct {
+// DefaultApiUpdateCredentialsOpts Optional parameters for the method 'UpdateCredentials'
+type DefaultApiUpdateCredentialsOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11288,10 +11288,10 @@ UpdateCredentials Update the credentials data for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param credentialsId Credentials string identifier
  * @param updateCredentialsRequest Credentials create request
- * @param optional nil or *UpdateCredentialsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateCredentialsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) UpdateCredentials(ctx _context.Context, credentialsId string, updateCredentialsRequest UpdateCredentialsRequest, localVarOptionals *UpdateCredentialsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateCredentials(ctx _context.Context, credentialsId string, updateCredentialsRequest UpdateCredentialsRequest, localVarOptionals *DefaultApiUpdateCredentialsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -11449,8 +11449,8 @@ func (a *DefaultApiService) UpdateDataset(ctx _context.Context, workspaceId int6
 	return localVarHTTPResponse, nil
 }
 
-// UpdateLabelOpts Optional parameters for the method 'UpdateLabel'
-type UpdateLabelOpts struct {
+// DefaultApiUpdateLabelOpts Optional parameters for the method 'UpdateLabel'
+type DefaultApiUpdateLabelOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11459,11 +11459,11 @@ UpdateLabel Update an existing label
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param labelId Label numeric identifier
  * @param updateLabelRequest Label update request
- * @param optional nil or *UpdateLabelOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateLabelOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return CreateLabelResponse
 */
-func (a *DefaultApiService) UpdateLabel(ctx _context.Context, labelId int64, updateLabelRequest UpdateLabelRequest, localVarOptionals *UpdateLabelOpts) (CreateLabelResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateLabel(ctx _context.Context, labelId int64, updateLabelRequest UpdateLabelRequest, localVarOptionals *DefaultApiUpdateLabelOpts) (CreateLabelResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -11720,8 +11720,8 @@ func (a *DefaultApiService) UpdateOrganizationMemberRole(ctx _context.Context, o
 	return localVarHTTPResponse, nil
 }
 
-// UpdatePipelineOpts Optional parameters for the method 'UpdatePipeline'
-type UpdatePipelineOpts struct {
+// DefaultApiUpdatePipelineOpts Optional parameters for the method 'UpdatePipeline'
+type DefaultApiUpdatePipelineOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11730,11 +11730,11 @@ UpdatePipeline Update a Pipeline
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param pipelineId Pipeline numeric identifier
  * @param updatePipelineRequest Pipeline update request
- * @param optional nil or *UpdatePipelineOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdatePipelineOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return UpdatePipelineResponse
 */
-func (a *DefaultApiService) UpdatePipeline(ctx _context.Context, pipelineId int64, updatePipelineRequest UpdatePipelineRequest, localVarOptionals *UpdatePipelineOpts) (UpdatePipelineResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdatePipeline(ctx _context.Context, pipelineId int64, updatePipelineRequest UpdatePipelineRequest, localVarOptionals *DefaultApiUpdatePipelineOpts) (UpdatePipelineResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -11830,8 +11830,8 @@ func (a *DefaultApiService) UpdatePipeline(ctx _context.Context, pipelineId int6
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// UpdatePipelineSecretOpts Optional parameters for the method 'UpdatePipelineSecret'
-type UpdatePipelineSecretOpts struct {
+// DefaultApiUpdatePipelineSecretOpts Optional parameters for the method 'UpdatePipelineSecret'
+type DefaultApiUpdatePipelineSecretOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11840,10 +11840,10 @@ UpdatePipelineSecret Update the secrets data for the given id
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param secretId Secret numeric identifier
  * @param updatePipelineSecretRequest Secret update request
- * @param optional nil or *UpdatePipelineSecretOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdatePipelineSecretOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) UpdatePipelineSecret(ctx _context.Context, secretId int64, updatePipelineSecretRequest UpdatePipelineSecretRequest, localVarOptionals *UpdatePipelineSecretOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) UpdatePipelineSecret(ctx _context.Context, secretId int64, updatePipelineSecretRequest UpdatePipelineSecretRequest, localVarOptionals *DefaultApiUpdatePipelineSecretOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -11919,8 +11919,8 @@ func (a *DefaultApiService) UpdatePipelineSecret(ctx _context.Context, secretId 
 	return localVarHTTPResponse, nil
 }
 
-// UpdateTraceBeginOpts Optional parameters for the method 'UpdateTraceBegin'
-type UpdateTraceBeginOpts struct {
+// DefaultApiUpdateTraceBeginOpts Optional parameters for the method 'UpdateTraceBegin'
+type DefaultApiUpdateTraceBeginOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -11929,11 +11929,11 @@ UpdateTraceBegin Signal the Workflow execution has started
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param traceBeginRequest Trace begin request
- * @param optional nil or *UpdateTraceBeginOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateTraceBeginOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return TraceBeginResponse
 */
-func (a *DefaultApiService) UpdateTraceBegin(ctx _context.Context, workflowId string, traceBeginRequest TraceBeginRequest, localVarOptionals *UpdateTraceBeginOpts) (TraceBeginResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateTraceBegin(ctx _context.Context, workflowId string, traceBeginRequest TraceBeginRequest, localVarOptionals *DefaultApiUpdateTraceBeginOpts) (TraceBeginResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -12029,8 +12029,8 @@ func (a *DefaultApiService) UpdateTraceBegin(ctx _context.Context, workflowId st
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// UpdateTraceCompleteOpts Optional parameters for the method 'UpdateTraceComplete'
-type UpdateTraceCompleteOpts struct {
+// DefaultApiUpdateTraceCompleteOpts Optional parameters for the method 'UpdateTraceComplete'
+type DefaultApiUpdateTraceCompleteOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -12039,11 +12039,11 @@ UpdateTraceComplete Signal the Workflow execution has completed
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param traceCompleteRequest Trace complete request
- * @param optional nil or *UpdateTraceCompleteOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateTraceCompleteOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return TraceCompleteResponse
 */
-func (a *DefaultApiService) UpdateTraceComplete(ctx _context.Context, workflowId string, traceCompleteRequest TraceCompleteRequest, localVarOptionals *UpdateTraceCompleteOpts) (TraceCompleteResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateTraceComplete(ctx _context.Context, workflowId string, traceCompleteRequest TraceCompleteRequest, localVarOptionals *DefaultApiUpdateTraceCompleteOpts) (TraceCompleteResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -12139,8 +12139,8 @@ func (a *DefaultApiService) UpdateTraceComplete(ctx _context.Context, workflowId
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// UpdateTraceHeartbeatOpts Optional parameters for the method 'UpdateTraceHeartbeat'
-type UpdateTraceHeartbeatOpts struct {
+// DefaultApiUpdateTraceHeartbeatOpts Optional parameters for the method 'UpdateTraceHeartbeat'
+type DefaultApiUpdateTraceHeartbeatOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -12149,11 +12149,11 @@ UpdateTraceHeartbeat Period request to signal the execution is still on-going
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param traceHeartbeatRequest Trace heartbeat request
- * @param optional nil or *UpdateTraceHeartbeatOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateTraceHeartbeatOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return TraceHeartbeatResponse
 */
-func (a *DefaultApiService) UpdateTraceHeartbeat(ctx _context.Context, workflowId string, traceHeartbeatRequest TraceHeartbeatRequest, localVarOptionals *UpdateTraceHeartbeatOpts) (TraceHeartbeatResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateTraceHeartbeat(ctx _context.Context, workflowId string, traceHeartbeatRequest TraceHeartbeatRequest, localVarOptionals *DefaultApiUpdateTraceHeartbeatOpts) (TraceHeartbeatResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -12249,8 +12249,8 @@ func (a *DefaultApiService) UpdateTraceHeartbeat(ctx _context.Context, workflowI
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// UpdateTraceProgressOpts Optional parameters for the method 'UpdateTraceProgress'
-type UpdateTraceProgressOpts struct {
+// DefaultApiUpdateTraceProgressOpts Optional parameters for the method 'UpdateTraceProgress'
+type DefaultApiUpdateTraceProgressOpts struct {
     WorkspaceId optional.Int64
 }
 
@@ -12259,11 +12259,11 @@ UpdateTraceProgress Store one or more task executions metadata for the specified
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
  * @param traceProgressRequest Trace progress request
- * @param optional nil or *UpdateTraceProgressOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUpdateTraceProgressOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 @return TraceProgressResponse
 */
-func (a *DefaultApiService) UpdateTraceProgress(ctx _context.Context, workflowId string, traceProgressRequest TraceProgressRequest, localVarOptionals *UpdateTraceProgressOpts) (TraceProgressResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateTraceProgress(ctx _context.Context, workflowId string, traceProgressRequest TraceProgressRequest, localVarOptionals *DefaultApiUpdateTraceProgressOpts) (TraceProgressResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
@@ -12626,8 +12626,8 @@ func (a *DefaultApiService) UpdateWorkspaceParticipantRole(ctx _context.Context,
 	return localVarHTTPResponse, nil
 }
 
-// UploadDatasetOpts Optional parameters for the method 'UploadDataset'
-type UploadDatasetOpts struct {
+// DefaultApiUploadDatasetOpts Optional parameters for the method 'UploadDataset'
+type DefaultApiUploadDatasetOpts struct {
     Header optional.Bool
     File optional.Interface
 }
@@ -12637,12 +12637,12 @@ UploadDataset Upload the content of a new dataset version
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workspaceId Workspace numeric identifier
  * @param datasetId Dataset string identifier
- * @param optional nil or *UploadDatasetOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiUploadDatasetOpts - Optional Parameters:
  * @param "Header" (optional.Bool) -  Uploaded file has header
  * @param "File" (optional.Interface of *os.File) - 
 @return UploadDatasetVersionResponse
 */
-func (a *DefaultApiService) UploadDataset(ctx _context.Context, workspaceId int64, datasetId string, localVarOptionals *UploadDatasetOpts) (UploadDatasetVersionResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UploadDataset(ctx _context.Context, workspaceId int64, datasetId string, localVarOptionals *DefaultApiUploadDatasetOpts) (UploadDatasetVersionResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -12847,8 +12847,8 @@ func (a *DefaultApiService) UserInfo(ctx _context.Context) (DescribeUserResponse
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// ValidateActionNameOpts Optional parameters for the method 'ValidateActionName'
-type ValidateActionNameOpts struct {
+// DefaultApiValidateActionNameOpts Optional parameters for the method 'ValidateActionName'
+type DefaultApiValidateActionNameOpts struct {
     WorkspaceId optional.Int64
     Name optional.String
 }
@@ -12856,11 +12856,11 @@ type ValidateActionNameOpts struct {
 /*
 ValidateActionName Check that an action name is valid
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateActionNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateActionNameOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Name" (optional.String) -  Action name to validate
 */
-func (a *DefaultApiService) ValidateActionName(ctx _context.Context, localVarOptionals *ValidateActionNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateActionName(ctx _context.Context, localVarOptionals *DefaultApiValidateActionNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -12944,8 +12944,8 @@ func (a *DefaultApiService) ValidateActionName(ctx _context.Context, localVarOpt
 	return localVarHTTPResponse, nil
 }
 
-// ValidateComputeEnvNameOpts Optional parameters for the method 'ValidateComputeEnvName'
-type ValidateComputeEnvNameOpts struct {
+// DefaultApiValidateComputeEnvNameOpts Optional parameters for the method 'ValidateComputeEnvName'
+type DefaultApiValidateComputeEnvNameOpts struct {
     WorkspaceId optional.Int64
     Name optional.String
 }
@@ -12953,11 +12953,11 @@ type ValidateComputeEnvNameOpts struct {
 /*
 ValidateComputeEnvName Check that is a valid compute env name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateComputeEnvNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateComputeEnvNameOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Name" (optional.String) -  Compute env name to validate
 */
-func (a *DefaultApiService) ValidateComputeEnvName(ctx _context.Context, localVarOptionals *ValidateComputeEnvNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateComputeEnvName(ctx _context.Context, localVarOptionals *DefaultApiValidateComputeEnvNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13041,8 +13041,8 @@ func (a *DefaultApiService) ValidateComputeEnvName(ctx _context.Context, localVa
 	return localVarHTTPResponse, nil
 }
 
-// ValidateCredentialsNameOpts Optional parameters for the method 'ValidateCredentialsName'
-type ValidateCredentialsNameOpts struct {
+// DefaultApiValidateCredentialsNameOpts Optional parameters for the method 'ValidateCredentialsName'
+type DefaultApiValidateCredentialsNameOpts struct {
     WorkspaceId optional.Int64
     Name optional.String
 }
@@ -13050,11 +13050,11 @@ type ValidateCredentialsNameOpts struct {
 /*
 ValidateCredentialsName Check that is a valid credentials name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateCredentialsNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateCredentialsNameOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Name" (optional.String) -  Credentials name to validate
 */
-func (a *DefaultApiService) ValidateCredentialsName(ctx _context.Context, localVarOptionals *ValidateCredentialsNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateCredentialsName(ctx _context.Context, localVarOptionals *DefaultApiValidateCredentialsNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13138,18 +13138,18 @@ func (a *DefaultApiService) ValidateCredentialsName(ctx _context.Context, localV
 	return localVarHTTPResponse, nil
 }
 
-// ValidateOrganizationNameOpts Optional parameters for the method 'ValidateOrganizationName'
-type ValidateOrganizationNameOpts struct {
+// DefaultApiValidateOrganizationNameOpts Optional parameters for the method 'ValidateOrganizationName'
+type DefaultApiValidateOrganizationNameOpts struct {
     Name optional.String
 }
 
 /*
 ValidateOrganizationName Check that is a valid organization name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateOrganizationNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateOrganizationNameOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Organization name to validate
 */
-func (a *DefaultApiService) ValidateOrganizationName(ctx _context.Context, localVarOptionals *ValidateOrganizationNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateOrganizationName(ctx _context.Context, localVarOptionals *DefaultApiValidateOrganizationNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13230,8 +13230,8 @@ func (a *DefaultApiService) ValidateOrganizationName(ctx _context.Context, local
 	return localVarHTTPResponse, nil
 }
 
-// ValidatePipelineNameOpts Optional parameters for the method 'ValidatePipelineName'
-type ValidatePipelineNameOpts struct {
+// DefaultApiValidatePipelineNameOpts Optional parameters for the method 'ValidatePipelineName'
+type DefaultApiValidatePipelineNameOpts struct {
     WorkspaceId optional.Int64
     OrgId optional.Int64
     Name optional.String
@@ -13240,12 +13240,12 @@ type ValidatePipelineNameOpts struct {
 /*
 ValidatePipelineName Check that a Pipeline name is valid
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidatePipelineNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidatePipelineNameOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "OrgId" (optional.Int64) -  Organization numeric identifier
  * @param "Name" (optional.String) -  Pipeline name to validate
 */
-func (a *DefaultApiService) ValidatePipelineName(ctx _context.Context, localVarOptionals *ValidatePipelineNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidatePipelineName(ctx _context.Context, localVarOptionals *DefaultApiValidatePipelineNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13332,8 +13332,8 @@ func (a *DefaultApiService) ValidatePipelineName(ctx _context.Context, localVarO
 	return localVarHTTPResponse, nil
 }
 
-// ValidatePipelineSecretNameOpts Optional parameters for the method 'ValidatePipelineSecretName'
-type ValidatePipelineSecretNameOpts struct {
+// DefaultApiValidatePipelineSecretNameOpts Optional parameters for the method 'ValidatePipelineSecretName'
+type DefaultApiValidatePipelineSecretNameOpts struct {
     WorkspaceId optional.Int64
     Name optional.String
 }
@@ -13341,11 +13341,11 @@ type ValidatePipelineSecretNameOpts struct {
 /*
 ValidatePipelineSecretName Check that is a valid pipeline secret name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidatePipelineSecretNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidatePipelineSecretNameOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Name" (optional.String) -  Secret name to validate
 */
-func (a *DefaultApiService) ValidatePipelineSecretName(ctx _context.Context, localVarOptionals *ValidatePipelineSecretNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidatePipelineSecretName(ctx _context.Context, localVarOptionals *DefaultApiValidatePipelineSecretNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13429,8 +13429,8 @@ func (a *DefaultApiService) ValidatePipelineSecretName(ctx _context.Context, loc
 	return localVarHTTPResponse, nil
 }
 
-// ValidateTeamNameOpts Optional parameters for the method 'ValidateTeamName'
-type ValidateTeamNameOpts struct {
+// DefaultApiValidateTeamNameOpts Optional parameters for the method 'ValidateTeamName'
+type DefaultApiValidateTeamNameOpts struct {
     Name optional.String
 }
 
@@ -13438,10 +13438,10 @@ type ValidateTeamNameOpts struct {
 ValidateTeamName Check that is a valid team name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
- * @param optional nil or *ValidateTeamNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateTeamNameOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Organization name to validate
 */
-func (a *DefaultApiService) ValidateTeamName(ctx _context.Context, orgId int64, localVarOptionals *ValidateTeamNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateTeamName(ctx _context.Context, orgId int64, localVarOptionals *DefaultApiValidateTeamNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13515,18 +13515,18 @@ func (a *DefaultApiService) ValidateTeamName(ctx _context.Context, orgId int64, 
 	return localVarHTTPResponse, nil
 }
 
-// ValidateUserNameOpts Optional parameters for the method 'ValidateUserName'
-type ValidateUserNameOpts struct {
+// DefaultApiValidateUserNameOpts Optional parameters for the method 'ValidateUserName'
+type DefaultApiValidateUserNameOpts struct {
     Name optional.String
 }
 
 /*
 ValidateUserName Check that the user name is valid
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateUserNameOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateUserNameOpts - Optional Parameters:
  * @param "Name" (optional.String) -  User name to validate
 */
-func (a *DefaultApiService) ValidateUserName(ctx _context.Context, localVarOptionals *ValidateUserNameOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateUserName(ctx _context.Context, localVarOptionals *DefaultApiValidateUserNameOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13607,8 +13607,8 @@ func (a *DefaultApiService) ValidateUserName(ctx _context.Context, localVarOptio
 	return localVarHTTPResponse, nil
 }
 
-// ValidateWorkflowConstraintsOpts Optional parameters for the method 'ValidateWorkflowConstraints'
-type ValidateWorkflowConstraintsOpts struct {
+// DefaultApiValidateWorkflowConstraintsOpts Optional parameters for the method 'ValidateWorkflowConstraints'
+type DefaultApiValidateWorkflowConstraintsOpts struct {
     RunName optional.String
     SessionId optional.String
 }
@@ -13616,11 +13616,11 @@ type ValidateWorkflowConstraintsOpts struct {
 /*
 ValidateWorkflowConstraints Check that the given run name of a workflow has a valid format. When the session ID is given: check that no other workflow in the system exists with the combination of both elements
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param optional nil or *ValidateWorkflowConstraintsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiValidateWorkflowConstraintsOpts - Optional Parameters:
  * @param "RunName" (optional.String) -  Workflow run name to validate
  * @param "SessionId" (optional.String) -  Workflow session ID to validate
 */
-func (a *DefaultApiService) ValidateWorkflowConstraints(ctx _context.Context, localVarOptionals *ValidateWorkflowConstraintsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) ValidateWorkflowConstraints(ctx _context.Context, localVarOptionals *DefaultApiValidateWorkflowConstraintsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13704,8 +13704,8 @@ func (a *DefaultApiService) ValidateWorkflowConstraints(ctx _context.Context, lo
 	return localVarHTTPResponse, nil
 }
 
-// WorkflowLogsOpts Optional parameters for the method 'WorkflowLogs'
-type WorkflowLogsOpts struct {
+// DefaultApiWorkflowLogsOpts Optional parameters for the method 'WorkflowLogs'
+type DefaultApiWorkflowLogsOpts struct {
     WorkspaceId optional.Int64
     Next optional.String
 }
@@ -13714,12 +13714,12 @@ type WorkflowLogsOpts struct {
 WorkflowLogs Retrieve Workflow output logs of the Nextflow main job
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param workflowId Workflow string identifier
- * @param optional nil or *WorkflowLogsOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiWorkflowLogsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
  * @param "Next" (optional.String) -  Workflow log cursor
 @return WorkflowLogResponse
 */
-func (a *DefaultApiService) WorkflowLogs(ctx _context.Context, workflowId string, localVarOptionals *WorkflowLogsOpts) (WorkflowLogResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) WorkflowLogs(ctx _context.Context, workflowId string, localVarOptionals *DefaultApiWorkflowLogsOpts) (WorkflowLogResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
@@ -13816,8 +13816,8 @@ func (a *DefaultApiService) WorkflowLogs(ctx _context.Context, workflowId string
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// WorkspaceValidateOpts Optional parameters for the method 'WorkspaceValidate'
-type WorkspaceValidateOpts struct {
+// DefaultApiWorkspaceValidateOpts Optional parameters for the method 'WorkspaceValidate'
+type DefaultApiWorkspaceValidateOpts struct {
     Name optional.String
 }
 
@@ -13825,10 +13825,10 @@ type WorkspaceValidateOpts struct {
 WorkspaceValidate Check that is a valid workspace name
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  * @param orgId Organization numeric identifier
- * @param optional nil or *WorkspaceValidateOpts - Optional Parameters:
+ * @param optional nil or *DefaultApiWorkspaceValidateOpts - Optional Parameters:
  * @param "Name" (optional.String) -  Name to validate
 */
-func (a *DefaultApiService) WorkspaceValidate(ctx _context.Context, orgId int64, localVarOptionals *WorkspaceValidateOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) WorkspaceValidate(ctx _context.Context, orgId int64, localVarOptionals *DefaultApiWorkspaceValidateOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}

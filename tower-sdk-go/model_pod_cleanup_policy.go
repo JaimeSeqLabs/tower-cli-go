@@ -14,7 +14,7 @@ type PodCleanupPolicy string
 
 // List of PodCleanupPolicy
 const (
-	ON_SUCCESS PodCleanupPolicy = "on_success"
-	ALWAYS PodCleanupPolicy = "always"
-	NEVER PodCleanupPolicy = "never"
+	PODCLEANUPPOLICY_ON_SUCCESS PodCleanupPolicy = "on_success"
+	PODCLEANUPPOLICY_ALWAYS PodCleanupPolicy = "always"
+	PODCLEANUPPOLICY_NEVER PodCleanupPolicy = "never"
 )

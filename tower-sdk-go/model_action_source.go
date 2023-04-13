@@ -9,14 +9,11 @@
  */
 
 package openapi
-// WspRole the model 'WspRole'
-type WspRole string
+// ActionSource the model 'ActionSource'
+type ActionSource string
 
-// List of WspRole
+// List of Action.Source
 const (
-	OWNER WspRole = "owner"
-	ADMIN WspRole = "admin"
-	MAINTAIN WspRole = "maintain"
-	LAUNCH WspRole = "launch"
-	VIEW WspRole = "view"
+	ACTIONSOURCE_GITHUB ActionSource = "github"
+	ACTIONSOURCE_TOWER ActionSource = "tower"
 )

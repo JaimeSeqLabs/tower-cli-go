@@ -14,6 +14,6 @@ type PipelineQueryAttribute string
 
 // List of PipelineQueryAttribute
 const (
-	OPTIMIZED PipelineQueryAttribute = "optimized"
-	LABELS PipelineQueryAttribute = "labels"
+	PIPELINEQUERYATTRIBUTE_OPTIMIZED PipelineQueryAttribute = "optimized"
+	PIPELINEQUERYATTRIBUTE_LABELS PipelineQueryAttribute = "labels"
 )

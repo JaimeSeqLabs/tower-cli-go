@@ -14,8 +14,8 @@ type ActionStatus string
 
 // List of Action.Status
 const (
-	CREATING ActionStatus = "CREATING"
-	ACTIVE ActionStatus = "ACTIVE"
-	ERROR ActionStatus = "ERROR"
-	PAUSED ActionStatus = "PAUSED"
+	ACTIONSTATUS_CREATING ActionStatus = "CREATING"
+	ACTIONSTATUS_ACTIVE ActionStatus = "ACTIVE"
+	ACTIONSTATUS_ERROR ActionStatus = "ERROR"
+	ACTIONSTATUS_PAUSED ActionStatus = "PAUSED"
 )

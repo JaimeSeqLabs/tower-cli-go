@@ -14,8 +14,8 @@ type ComputeEnvStatus string
 
 // List of ComputeEnv.Status
 const (
-	CREATING ComputeEnvStatus = "CREATING"
-	AVAILABLE ComputeEnvStatus = "AVAILABLE"
-	ERRORED ComputeEnvStatus = "ERRORED"
-	INVALID ComputeEnvStatus = "INVALID"
+	COMPUTEENVSTATUS_CREATING ComputeEnvStatus = "CREATING"
+	COMPUTEENVSTATUS_AVAILABLE ComputeEnvStatus = "AVAILABLE"
+	COMPUTEENVSTATUS_ERRORED ComputeEnvStatus = "ERRORED"
+	COMPUTEENVSTATUS_INVALID ComputeEnvStatus = "INVALID"
 )

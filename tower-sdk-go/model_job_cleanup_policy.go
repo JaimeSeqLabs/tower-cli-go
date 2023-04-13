@@ -14,7 +14,7 @@ type JobCleanupPolicy string
 
 // List of JobCleanupPolicy
 const (
-	ON_SUCCESS JobCleanupPolicy = "on_success"
-	ALWAYS JobCleanupPolicy = "always"
-	NEVER JobCleanupPolicy = "never"
+	JOBCLEANUPPOLICY_ON_SUCCESS JobCleanupPolicy = "on_success"
+	JOBCLEANUPPOLICY_ALWAYS JobCleanupPolicy = "always"
+	JOBCLEANUPPOLICY_NEVER JobCleanupPolicy = "never"
 )
