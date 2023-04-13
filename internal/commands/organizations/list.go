@@ -6,7 +6,7 @@ import (
 	"io"
 	"openapi"
 	"tower-cli-go/internal/formatters"
-	"tower-cli-go/internal/utils"
+	. "tower-cli-go/internal"
 
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
@@ -19,21 +19,15 @@ var ListCmd = &cobra.Command{
 	Short: "List available organizations",
 	RunE: func(cmd *cobra.Command, args []string) error {
 		
-		api := utils.GenerateClientFromCfg().DefaultApi
-		ctx := cmd.Context()
+		wrapper := NewApiFor(cmd)
 
-		// extract user ID
-		userInfo, _, err := api.UserInfo(ctx)
+		userId, userName, err := wrapper.GetUserInfo()
 		if err != nil {
 			return err
 		}
-		if userInfo.User.Id == nil {
-			return fmt.Errorf("unable to retrieve user ID")
-		}
-		userId := *userInfo.User.Id
 
 		// retrieve wsp and orgs for user
-		response, _, err := api.ListWorkspacesUser(cmd.Context(), userId)
+		response, _, err := wrapper.Api.ListWorkspacesUser(cmd.Context(), userId)
 		if err != nil {
 			return err
 		}
@@ -47,13 +41,10 @@ var ListCmd = &cobra.Command{
 			}
 		}
 
-		server, _ := cmd.Flags().GetString("url")
-		server = formatters.RemoveApiFromUrl(server)
-
 		result := OrganizationsList {
-			UserName: userInfo.User.UserName,
+			UserName: userName,
 			Organizations: orgs,
-			ServerUrl: server,
+			ServerUrl: wrapper.ServerUrl(),
 		}
 
 		// print results
