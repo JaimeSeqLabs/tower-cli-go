@@ -6,13 +6,13 @@ import (
 	"openapi"
 
 	"github.com/spf13/cobra"
-)	
+)
 
-var infoCmd = &cobra.Command{
+var InfoCmd = &cobra.Command{
 	Use:   "info",
 	Short: "Get API info",
 	Run: func(cmd *cobra.Command, args []string) {
-		
+
 		cfg := openapi.NewConfiguration()
 		cfg.Debug = true
 		cfg.BasePath = "https://api.tower.nf"
@@ -28,8 +28,4 @@ var infoCmd = &cobra.Command{
 
 		fmt.Printf("API Version is %s\n", apiVersion)
 	},
-}
-
-func init() {
-	rootCmd.AddCommand(infoCmd)
 }
