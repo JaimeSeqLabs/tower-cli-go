@@ -3,7 +3,7 @@ package commands
 import (
 	"context"
 	"fmt"
-	"openapi"
+	"tower-cli-go/internal/utils"
 
 	"github.com/spf13/cobra"
 )
@@ -13,15 +13,11 @@ var InfoCmd = &cobra.Command{
 	Short: "Get API info",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		cfg := openapi.NewConfiguration()
-		cfg.Debug = true
-		cfg.BasePath = "https://api.tower.nf"
-
-		api := openapi.NewAPIClient(cfg)
+		api := utils.GenerateClientFromCfg()
 
 		response, _, err := api.DefaultApi.Info(context.TODO())
 		if err != nil {
-			panic(err)
+			cobra.CheckErr(err)
 		}
 
 		apiVersion := response.ServiceInfo.ApiVersion
