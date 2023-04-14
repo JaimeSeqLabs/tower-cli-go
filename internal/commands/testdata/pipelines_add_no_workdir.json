@@ -1,0 +1,10 @@
+{
+  "name": "pipelineNew",
+  "launch": {
+    "pipeline": "https://github.com/grananda/nextflow-hello",
+    "revision": "main",
+    "resume": false,
+    "pullLatest": false,
+    "stubRun": false
+  }
+}

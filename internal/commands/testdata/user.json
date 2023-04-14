@@ -1,0 +1,20 @@
+{
+  "needConsent": false,
+  "user": {
+    "id": 1264,
+    "userName": "jordi",
+    "email": "jordi@seqera.io",
+    "firstName": null,
+    "lastName": null,
+    "organization": null,
+    "description": null,
+    "avatar": "https://www.gravatar.com/avatar/KDFSAJDKFJDSKFJK?d=404",
+    "notification": null,
+    "termsOfUseConsent": true,
+    "marketingConsent": true,
+    "lastAccess": "2021-07-21T10:30:25Z",
+    "dateCreated": "2020-12-01T10:43:51Z",
+    "lastUpdated": "2021-07-21T10:30:25Z",
+    "deleted": false
+  }
+}
