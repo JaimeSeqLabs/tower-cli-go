@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"openapi"
+	"strconv"
 	"strings"
 	"tower-cli-go/internal/utils"
 
@@ -123,3 +124,124 @@ func (w ApiWrapper) OrgByName(orgName string) (openapi.OrgAndWorkspaceDbDto, err
 
 	return orgs[1], nil
 }
+
+func (w ApiWrapper) FindOrgAndWspByName(orgName, wspName string) (openapi.OrgAndWorkspaceDbDto, error) {
+	
+	userId, userName, err := w.GetUserInfo()
+	if err != nil {
+		return openapi.OrgAndWorkspaceDbDto{}, err
+	}
+
+	wspAndOrgs, _, err := w.Api.ListWorkspacesUser(w.Ctx, userId)
+	if err != nil {
+		return openapi.OrgAndWorkspaceDbDto{}, err
+	}
+
+	if len(wspAndOrgs.OrgsAndWorkspaces) == 0 {
+		return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("no organization or workspace found for user %s", userName)
+	}
+
+	// find dto with target org and wsp name
+	for _, dto := range wspAndOrgs.OrgsAndWorkspaces {
+		if dto.OrgName == orgName && dto.WorkspaceName == wspName {
+			return dto, nil
+		}
+	}
+
+	return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("org %s with wsp %s not found in user %s organizations", orgName, wspName, userName)
+}
+
+func (w ApiWrapper) FindOrgAndWspByWspID(wspID int64) (openapi.OrgAndWorkspaceDbDto, error) {
+
+	userID, userName, err := w.GetUserInfo()
+	if err != nil {
+		return openapi.OrgAndWorkspaceDbDto{}, err
+	}
+
+	dtos, _, err := w.Api.ListWorkspacesUser(w.Ctx, userID)
+	if err != nil {
+		return openapi.OrgAndWorkspaceDbDto{}, err
+	}
+
+	if len(dtos.OrgsAndWorkspaces) == 0 {
+		return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("no workspaces found for user")
+	}
+
+	// find target dto
+	for _, orgAndWsp := range dtos.OrgsAndWorkspaces {
+		if wspID == orgAndWsp.WorkspaceId {
+			return orgAndWsp, nil
+		}
+	}
+
+	return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("no workspace %d found in user %s workspaces", wspID, userName)
+}
+
+func (w ApiWrapper) FindOrgAndWspByWspRef(wspRef string) (openapi.OrgAndWorkspaceDbDto, error) {
+	
+	if wspRef == "" {
+		return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("empty workspace reference")
+	}
+
+	// org/wsp ref
+	if strings.Contains(wspRef, "/") {
+
+		parts := strings.Split(strings.TrimSpace(wspRef), "/")
+		if len(parts) != 2 {
+			return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("invalid workspace reference %s", wspRef)
+		}
+
+		orgWspDto, err := w.FindOrgAndWspByName(parts[0], parts[1])
+		if err != nil {
+			return openapi.OrgAndWorkspaceDbDto{}, err
+		}
+
+		return orgWspDto, nil
+	}
+
+	// the ref is an id, parse as i64
+	id, err := strconv.ParseInt(wspRef, 10 , 64)
+	if err != nil {
+		return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("invalid workspace ID")
+	}
+
+	return w.FindOrgAndWspByWspID(id)
+}
+
+func (w ApiWrapper) WorkspaceRef(wspID int64) (string, error) {
+
+	if wspID <= 0 {
+		return "user", nil
+	}
+
+	dto, err := w.FindOrgAndWspByWspID(wspID)
+	if err != nil {
+		return "", err
+	}
+
+	return w.BuildWorkspaceRef(dto.OrgName, dto.WorkspaceName), nil
+}
+
+func (w ApiWrapper) BuildWorkspaceRef(orgName, wspName string) string {
+	return fmt.Sprintf("[%s / %s]", orgName, wspName)	
+}
+
+func (w ApiWrapper) BaseWspUrl(wspID int64) (string, error) {
+
+	_, userName, err := w.GetUserInfo()
+	if err != nil {
+		return "", err
+	}
+
+	if wspID <= 0 {
+		return fmt.Sprintf("%s/user/%s", w.ServerUrl(), userName), nil
+	}
+
+	dto, err := w.FindOrgAndWspByWspID(wspID)
+	if err != nil {
+		return "", err
+	}
+
+	return fmt.Sprintf("%s/orgs/%s/workspaces/%s", w.ServerUrl(), dto.OrgName, dto.WorkspaceName), nil
+}
+

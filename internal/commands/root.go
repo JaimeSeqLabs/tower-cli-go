@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"tower-cli-go/internal/commands/organizations"
+	"tower-cli-go/internal/commands/credentials"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -55,6 +56,7 @@ func NewRootCmd() *cobra.Command {
 	rootCmd.AddCommand(
 		NewInfoCmd(),
 		organizations.NewOrganizationsCmd(),
+		credentials.NewCredentialsCmd(),
 	)
 
 	return rootCmd
