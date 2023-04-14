@@ -23,27 +23,35 @@ func NewListCmd() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 
 			wrapper := internal.NewApiFor(cmd)
-			wspRefFlag, _ := cmd.Flags().GetString("workspace")
+			wspRefFlag, _ := cmd.Flags().GetString("workspace")			
 
-			dto, err := wrapper.FindOrgAndWspByWspRef(wspRefFlag)
+			var wspID optional.Int64
+			var wspRef string
+			
+			if wspRefFlag == "" {
+				wspID = optional.EmptyInt64()
+				wspRef = "user"
+			} else {
+				dto, err := wrapper.FindOrgAndWspByWspRef(wspRefFlag)
+				if err != nil {
+					return err
+				}
+				wspID = optional.NewInt64(dto.WorkspaceId)
+				wspRef = wrapper.BuildWorkspaceRef(dto.OrgName, dto.WorkspaceName)
+			}
+	
+			response, _, err := wrapper.Api.ListCredentials(wrapper.Ctx, &openapi.DefaultApiListCredentialsOpts{ WorkspaceId: wspID })
 			if err != nil {
 				return err
 			}
 
-			response, _, err := wrapper.Api.ListCredentials(wrapper.Ctx, &openapi.DefaultApiListCredentialsOpts{
-				WorkspaceId: optional.NewInt64(dto.WorkspaceId),
-			})
-			if err != nil {
-				return err
-			}
-
-			wspURL, err := wrapper.BaseWspUrl(dto.WorkspaceId)
+			wspURL, err := wrapper.BaseWspUrl(wspID.Value())
 			if err != nil {
 				return err
 			}
 
 			result := CredentialsList {
-				WorskpaceRef: wrapper.BuildWorkspaceRef(dto.OrgName, dto.WorkspaceName),
+				WorskpaceRef: wspRef,
 				Credentials: response.Credentials,
 				BaseWspUrl: wspURL,
 			}
@@ -53,7 +61,7 @@ func NewListCmd() *cobra.Command {
 	}
 
 	listCmd.Flags().StringP(
-		"workspace", "w", "", 
+		"workspace", "w", "",
 		"Workspace numeric identifier (TOWER_WORKSPACE_ID as default) or workspace reference as \"OrganizationName/WorkspaceName\"",
 	)
 	viper.BindEnv("workspace", "TOWER_WORKSPACE_ID")
