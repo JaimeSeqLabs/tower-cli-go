@@ -19,7 +19,7 @@ var (
 	showVersion  bool
 )
 
-var rootCmd = &cobra.Command{
+var RootCmd = &cobra.Command{
 	Use:   "tw",
 	Short: "Tower command line tool",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
@@ -36,7 +36,7 @@ var rootCmd = &cobra.Command{
 }
 
 func Execute() {
-	if err := rootCmd.Execute(); err != nil {
+	if err := RootCmd.Execute(); err != nil {
 		fmt.Println(err)
 		os.Exit(1)
 	}
@@ -48,26 +48,26 @@ func init() {
 	cobra.OnInitialize(initViperCfg)
 
 	// persistent global flags, shared with subcommands
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (none by default)")
-	rootCmd.PersistentFlags().StringVarP(&accessToken, "access-token", "t", "", "Tower personal access token (TOWER_ACCESS_TOKEN)")
-	rootCmd.PersistentFlags().StringVarP(&serverUrl, "url", "u", "https://api.tower.nf", "Tower server API endpoint URL (TOWER_API_ENDPOINT)")
-	rootCmd.PersistentFlags().StringVarP(&outputFormat, "output", "o", "", "Show output in defined format (only 'json' allowed)")
-	rootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Show HTTP request/response logs at stderr")
-	rootCmd.PersistentFlags().BoolVar(&insecure, "insecure", false, "Explicitly allow to connect to a non-SSL secured Tower server (this is not recommended)")
-	rootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "V", false, "Print version information and exit")
+	RootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "Config file (none by default)")
+	RootCmd.PersistentFlags().StringVarP(&accessToken, "access-token", "t", "", "Tower personal access token (TOWER_ACCESS_TOKEN)")
+	RootCmd.PersistentFlags().StringVarP(&serverUrl, "url", "u", "https://api.tower.nf", "Tower server API endpoint URL (TOWER_API_ENDPOINT)")
+	RootCmd.PersistentFlags().StringVarP(&outputFormat, "output", "o", "", "Show output in defined format (only 'json' allowed)")
+	RootCmd.PersistentFlags().BoolVarP(&verbose, "verbose", "v", false, "Show HTTP request/response logs at stderr")
+	RootCmd.PersistentFlags().BoolVar(&insecure, "insecure", false, "Explicitly allow to connect to a non-SSL secured Tower server (this is not recommended)")
+	RootCmd.PersistentFlags().BoolVarP(&showVersion, "version", "V", false, "Print version information and exit")
 
 	// bind flags to viper sources
-	viper.BindPFlag("url", rootCmd.PersistentFlags().Lookup("url"))
+	viper.BindPFlag("url", RootCmd.PersistentFlags().Lookup("url"))
 	viper.BindEnv("url", "TOWER_API_ENDPOINT")
-	viper.BindPFlag("output", rootCmd.PersistentFlags().Lookup("output"))
-	viper.BindPFlag("verbose", rootCmd.PersistentFlags().Lookup("verbose"))
-	viper.BindPFlag("config", rootCmd.PersistentFlags().Lookup("config"))
-	viper.BindPFlag("access-token", rootCmd.PersistentFlags().Lookup("access-token"))
+	viper.BindPFlag("output", RootCmd.PersistentFlags().Lookup("output"))
+	viper.BindPFlag("verbose", RootCmd.PersistentFlags().Lookup("verbose"))
+	viper.BindPFlag("config", RootCmd.PersistentFlags().Lookup("config"))
+	viper.BindPFlag("access-token", RootCmd.PersistentFlags().Lookup("access-token"))
 	viper.BindEnv("access-token", "TOWER_ACCESS_TOKEN")
-	viper.BindPFlag("insecure", rootCmd.PersistentFlags().Lookup("insecure"))
+	viper.BindPFlag("insecure", RootCmd.PersistentFlags().Lookup("insecure"))
 
 	// add subcommands
-	rootCmd.AddCommand(
+	RootCmd.AddCommand(
 		InfoCmd,
 		organizations.OrganizationsCmd,
 	)
