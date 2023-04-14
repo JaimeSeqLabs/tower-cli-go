@@ -72,8 +72,12 @@ func (w ApiWrapper) GetUserInfo() (id int64, name string, err error) {
 
 func (w ApiWrapper) FetchOrganization(orgID int64, orgName string) (openapi.DescribeOrganizationResponse, error) {
 
-	if orgID <= 0 {
-		// no ID, find org dto by name then use its ID
+	if orgID <= 0 { // no ID, find org dto by name then use its ID
+		
+		if orgName == "" {
+			return openapi.DescribeOrganizationResponse{}, fmt.Errorf("organization ID or name needed")
+		}
+
 		dto, err := w.OrgByName(orgName)
 		if err != nil {
 			return openapi.DescribeOrganizationResponse{}, err
