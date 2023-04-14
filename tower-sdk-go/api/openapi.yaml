@@ -9296,7 +9296,7 @@ components:
             sessionId: sessionId
             commitId: commitId
             params:
-              key: true
+              key: '{}'
             userName: userName
             scriptFile: scriptFile
             revision: revision
@@ -9462,7 +9462,7 @@ components:
             sessionId: sessionId
             commitId: commitId
             params:
-              key: true
+              key: '{}'
             userName: userName
             scriptFile: scriptFile
             revision: revision
@@ -9636,7 +9636,7 @@ components:
           sessionId: sessionId
           commitId: commitId
           params:
-            key: true
+            key: '{}'
           userName: userName
           scriptFile: scriptFile
           revision: revision
@@ -12841,7 +12841,7 @@ components:
         sessionId: sessionId
         commitId: commitId
         params:
-          key: true
+          key: '{}'
         userName: userName
         scriptFile: scriptFile
         revision: revision
@@ -12861,8 +12861,7 @@ components:
         commandLine:
           type: string
         params:
-          additionalProperties:
-            type: boolean
+          additionalProperties: true
           type: object
         projectDir:
           type: string
