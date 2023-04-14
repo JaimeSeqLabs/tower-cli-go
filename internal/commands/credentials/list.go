@@ -50,9 +50,15 @@ func NewListCmd() *cobra.Command {
 				return err
 			}
 
+			// response.Credentials is "omitIfEmpty"
+			creds := response.Credentials
+			if creds == nil {
+				creds = []openapi.Credentials{}
+			}
+
 			result := CredentialsList {
 				WorskpaceRef: wspRef,
-				Credentials: response.Credentials,
+				Credentials: creds,
 				BaseWspUrl: wspURL,
 			}
 

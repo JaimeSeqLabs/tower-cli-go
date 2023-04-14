@@ -33,7 +33,7 @@ func TestList(t *testing.T) {
 			jsonRes string
 		}
 		args        []string
-		expectedOut string
+		outChecker func(t *testing.T, out string)
 	}{
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
@@ -47,54 +47,54 @@ func TestList(t *testing.T) {
 				"-o", "json", "-t", "<tower_token>",
 				// no workspace ref
 			},
-			expectedOut: `
-			{
-				"workspaceRef": "user",
-				"credentials": [
-					{
-						"id": "2ba2oekqeTEBzwSDgXg7xf",
-						"name": "ssh",
-						"provider": "ssh",
-						"lastUsed": "2021-09-06T08:53:51Z",
-						"dateCreated": "2021-09-06T06:54:53Z",
-						"lastUpdated": "2021-09-06T06:54:53Z",
-						"keys": {
-							"privateKey": "privateKey",
-							"passphrase": "passphrase",
-							"discriminator": "ssh"
+			outChecker: func(t *testing.T, out string) { assert.JSONEq(t,
+				`{
+					"workspaceRef": "user",
+					"credentials": [
+						{
+							"id": "2ba2oekqeTEBzwSDgXg7xf",
+							"name": "ssh",
+							"provider": "ssh",
+							"lastUsed": "2021-09-06T08:53:51Z",
+							"dateCreated": "2021-09-06T06:54:53Z",
+							"lastUpdated": "2021-09-06T06:54:53Z",
+							"keys": {
+								"privateKey": "privateKey",
+								"passphrase": "passphrase",
+								"discriminator": "ssh"
+							}
+						},
+						{
+							"id": "57Ic6reczFn78H1DTaaXkp",
+							"name": "azure",
+							"provider": "azure",
+							"dateCreated": "2021-09-07T13:50:21Z",
+							"lastUpdated": "2021-09-07T13:50:21Z",
+							"lastUsed": "0001-01-01T00:00:00Z",
+							"keys": {
+								"batchName": "batchName",
+								"batchKey": "batchKey",
+								"storageName": "storageName",
+								"storageKey": "storageKey",
+								"discriminator": "azure"
+							}
+						},
+						{
+							"id": "5aoTHK1PcXdIldjb7EarQx",
+							"name": "aws",
+							"provider": "aws",
+							"lastUsed": "2022-09-06T08:53:51Z",
+							"dateCreated": "2022-09-06T06:54:53Z",
+							"lastUpdated": "2022-09-06T06:54:53Z",
+							"keys": {
+								"accessKey": "accessKey",
+								"secretKey": "secretKey",
+								"assumeRoleArn": "awsRole",
+								"discriminator": "aws"
+							}
 						}
-					},
-					{
-						"id": "57Ic6reczFn78H1DTaaXkp",
-						"name": "azure",
-						"provider": "azure",
-						"dateCreated": "2021-09-07T13:50:21Z",
-						"lastUpdated": "2021-09-07T13:50:21Z",
-						"lastUsed": "0001-01-01T00:00:00Z",
-						"keys": {
-							"batchName": "batchName",
-							"batchKey": "batchKey",
-							"storageName": "storageName",
-							"storageKey": "storageKey",
-							"discriminator": "azure"
-						}
-					},
-					{
-						"id": "5aoTHK1PcXdIldjb7EarQx",
-						"name": "aws",
-						"provider": "aws",
-						"lastUsed": "2022-09-06T08:53:51Z",
-						"dateCreated": "2022-09-06T06:54:53Z",
-						"lastUpdated": "2022-09-06T06:54:53Z",
-						"keys": {
-							"accessKey": "accessKey",
-							"secretKey": "secretKey",
-							"assumeRoleArn": "awsRole",
-							"discriminator": "aws"
-						}
-					}
-				]
-			}`,
+					]
+				}`, out)},
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
@@ -106,27 +106,74 @@ func TestList(t *testing.T) {
 			args: []string{
 				"credentials", "list", 
 				"-o", "json", "-t", "<tower_token>",
-				// no workspace ref
+				"-w", "organization2/workspace2",
 			},
-			expectedOut: `
-			{
-				"workspaceRef": "user",
-				"credentials": [
-					{
-						"id": "2ba2oekqeTEBzwSDgXg7xf",
-						"name": "ssh",
-						"provider": "ssh",
-						"lastUsed": "2021-09-06T08:53:51Z",
-						"dateCreated": "2021-09-06T06:54:53Z",
-						"lastUpdated": "2021-09-06T06:54:53Z",
-						"keys": {
-							"privateKey": "privateKey",
-							"passphrase": "passphrase",
-							"discriminator": "ssh"
+			outChecker: func(t *testing.T, out string) { assert.JSONEq(t, 
+				`{
+					"workspaceRef": "[organization2 / workspace2]",
+					"credentials": [
+						{
+							"id": "2ba2oekqeTEBzwSDgXg7xf",
+							"name": "ssh",
+							"provider": "ssh",
+							"lastUsed": "2021-09-06T08:53:51Z",
+							"dateCreated": "2021-09-06T06:54:53Z",
+							"lastUpdated": "2021-09-06T06:54:53Z",
+							"keys": {
+								"privateKey": "privateKey",
+								"passphrase": "passphrase",
+								"discriminator": "ssh"
+							}
+						},
+						{
+							"id": "57Ic6reczFn78H1DTaaXkp",
+							"name": "azure",
+							"provider": "azure",
+							"dateCreated": "2021-09-07T13:50:21Z",
+							"lastUpdated": "2021-09-07T13:50:21Z",
+							"lastUsed": "0001-01-01T00:00:00Z",
+							"keys": {
+								"batchName": "batchName",
+								"batchKey": "batchKey",
+								"storageName": "storageName",
+								"storageKey": "storageKey",
+								"discriminator": "azure"
+							}
+						},
+						{
+							"id": "5aoTHK1PcXdIldjb7EarQx",
+							"name": "aws",
+							"provider": "aws",
+							"lastUsed": "2022-09-06T08:53:51Z",
+							"dateCreated": "2022-09-06T06:54:53Z",
+							"lastUpdated": "2022-09-06T06:54:53Z",
+							"keys": {
+								"accessKey": "accessKey",
+								"secretKey": "secretKey",
+								"assumeRoleArn": "awsRole",
+								"discriminator": "aws"
+							}
 						}
-					}
-				]
-			}`,
+					]
+				}`, out)},
+		},
+		{
+			epMocks: []struct{ method string; path string; jsonRes string; }{
+				{"GET", "/user-info", getTestResource("user.json")},
+				{"GET", "/user", getTestResource("user.json")},
+				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
+				{"GET", "/credentials", "{}"},
+			},
+			args: []string{
+				"credentials", "list", 
+				"-o", "json", "-t", "<tower_token>",
+				"-w", "organization2/workspace2",
+			},
+			outChecker: func(t *testing.T, out string) { assert.JSONEq(t, 
+				`{
+					"workspaceRef": "[organization2 / workspace2]",
+					"credentials": []
+				}`, out)},
 		},
 	}
 
@@ -160,7 +207,8 @@ func TestList(t *testing.T) {
 		}
 		outStr := string(out)
 
-		assert.JSONEq(t, tc.expectedOut, outStr)
+		// assertions
+		tc.outChecker(t, outStr)
 
 		// cleanup before next test case
 		server.Close()
