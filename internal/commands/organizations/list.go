@@ -13,43 +13,47 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func NewListCmd() *cobra.Command {
 
-var ListCmd = &cobra.Command{
-	Use: "list",
-	Short: "List available organizations",
-	RunE: func(cmd *cobra.Command, args []string) error {
-		
-		wrapper := NewApiFor(cmd)
+	listCmd := &cobra.Command{
+		Use: "list",
+		Short: "List available organizations",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			
+			wrapper := NewApiFor(cmd)
 
-		userId, userName, err := wrapper.GetUserInfo()
-		if err != nil {
-			return err
-		}
-
-		// retrieve wsp and orgs for user
-		response, _, err := wrapper.Api.ListWorkspacesUser(cmd.Context(), userId)
-		if err != nil {
-			return err
-		}
-
-		// save only orgs from response
-		orgs := []openapi.OrgAndWorkspaceDbDto{}
-		
-		for _, dto := range response.OrgsAndWorkspaces {
-			if dto.WorkspaceId <= 0 {
-				orgs = append(orgs, dto)
+			userId, userName, err := wrapper.GetUserInfo()
+			if err != nil {
+				return err
 			}
-		}
 
-		result := OrganizationsList {
-			UserName: userName,
-			Organizations: orgs,
-			ServerUrl: wrapper.ServerUrl(),
-		}
+			// retrieve wsp and orgs for user
+			response, _, err := wrapper.Api.ListWorkspacesUser(cmd.Context(), userId)
+			if err != nil {
+				return err
+			}
 
-		// print results
-		return formatters.PrintTo(cmd.OutOrStdout(), result)
-	},
+			// save only orgs from response
+			orgs := []openapi.OrgAndWorkspaceDbDto{}
+			
+			for _, dto := range response.OrgsAndWorkspaces {
+				if dto.WorkspaceId <= 0 {
+					orgs = append(orgs, dto)
+				}
+			}
+
+			result := OrganizationsList {
+				UserName: userName,
+				Organizations: orgs,
+				ServerUrl: wrapper.ServerUrl(),
+			}
+
+			// print results
+			return formatters.PrintTo(cmd.OutOrStdout(), result)
+		},
+	}
+
+	return listCmd
 }
 
 type OrganizationsList struct {

@@ -13,40 +13,37 @@ import (
 	"github.com/spf13/cobra"
 )
 
+func NewViewCmd() *cobra.Command {
 
-var ViewCmd = &cobra.Command{
-	Use: "view",
-	Short: "Describe organization details",
-	RunE: func(cmd *cobra.Command, args []string) error {
+	viewCmd := &cobra.Command{
+		Use: "view",
+		Short: "Describe organization details",
+		RunE: func(cmd *cobra.Command, args []string) error {
+			
+			orgId, _ := cmd.Flags().GetInt64("id")
+			orgName, _ := cmd.Flags().GetString("name")
+			
+			wrapper := NewApiFor(cmd)
+			
+			response, err := wrapper.FetchOrganization(orgId, orgName)
+			if err != nil {
+				return err
+			}
+			
+			result := OrganizationsView {
+				Organization: response.Organization,
+				ServerUrl: wrapper.ServerUrl(),
+			}
+			
+			return formatters.PrintTo(cmd.OutOrStdout(), result)
+		},
+	}
 
-		orgId, _ := cmd.Flags().GetInt64("id")
-		orgName, _ := cmd.Flags().GetString("name")
-		
-		wrapper := NewApiFor(cmd)
+	viewCmd.Flags().Int64P("id", "i", 0, "Organization unique id")
+	viewCmd.Flags().StringP("name", "n", "", "Organization unique id")
+	viewCmd.MarkFlagsMutuallyExclusive("id", "name")
 
-		response, err := wrapper.FetchOrganization(orgId, orgName)
-		if err != nil {
-			return err
-		}
-
-		result := OrganizationsView {
-			Organization: response.Organization,
-			ServerUrl: wrapper.ServerUrl(),
-		}
-
-		return formatters.PrintTo(cmd.OutOrStdout(), result)
-	},
-}
-
-var (
-	_orgID int64
-	_orgName string
-)
-
-func init() {
-	ViewCmd.Flags().Int64VarP(&_orgID, "id", "i", 0, "Organization unique id")
-	ViewCmd.Flags().StringVarP(&_orgName, "name", "n", "", "Organization unique id")
-	ViewCmd.MarkFlagsMutuallyExclusive("id", "name")
+	return viewCmd
 }
 
 type OrganizationsView struct {
