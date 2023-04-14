@@ -1,3 +1,4 @@
 [submodule "tower-sdk-gencode"]
 	path = tower-sdk-gencode
 	url = https://github.com/seqeralabs/tower-sdk-gencode
+	branch = notask/tweak-go-gen
