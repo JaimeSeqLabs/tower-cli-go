@@ -148,7 +148,7 @@ Method | HTTP request | Description
 
 ## AddLabelsToActions
 
-> AddLabelsToActions(ctx, associateWorkflowLabelsRequest, optional)
+> AddLabelsToActions(ctx, associateActionLabelsRequest, optional)
 
 Add some labels to some actions
 
@@ -158,7 +158,7 @@ Add some labels to some actions
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**associateWorkflowLabelsRequest** | [**AssociateWorkflowLabelsRequest**](AssociateWorkflowLabelsRequest.md)| Labels add request | 
+**associateActionLabelsRequest** | [**AssociateActionLabelsRequest**](AssociateActionLabelsRequest.md)| Labels add request | 
  **optional** | ***AddLabelsToActionsOpts** | optional parameters | nil if no parameters
 
 ### Optional Parameters
@@ -3511,7 +3511,7 @@ Name | Type | Description  | Notes
 
 ## ListLabels
 
-> ListWorkspacesResponse ListLabels(ctx, optional)
+> ListLabelsResponse ListLabels(ctx, optional)
 
 List the labels of the authenticated user or a workspace
 
@@ -3534,11 +3534,11 @@ Name | Type | Description  | Notes
  **max** | **optional.Int32**| Pagination result max result | 
  **offset** | **optional.Int32**| Pagination offset | 
  **search** | **optional.String**| Filter search param | 
- **type_** | [**optional.Interface of WorkflowQueryAttribute**](.md)| Labels type | 
+ **type_** | [**optional.Interface of LabelType**](.md)| Labels type | 
 
 ### Return type
 
-[**ListWorkspacesResponse**](ListWorkspacesResponse.md)
+[**ListLabelsResponse**](ListLabelsResponse.md)
 
 ### Authorization
 
@@ -4677,7 +4677,7 @@ Name | Type | Description  | Notes
 
 ## UpdateLabel
 
-> CreateLabelResponse UpdateLabel(ctx, labelId, updateLabelRequest, optional)
+> UpdateLabelResponse UpdateLabel(ctx, labelId, updateLabelRequest, optional)
 
 Update an existing label
 
@@ -4704,7 +4704,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateLabelResponse**](CreateLabelResponse.md)
+[**UpdateLabelResponse**](UpdateLabelResponse.md)
 
 ### Authorization
 

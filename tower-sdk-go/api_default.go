@@ -37,11 +37,11 @@ type DefaultApiAddLabelsToActionsOpts struct {
 /*
 AddLabelsToActions Add some labels to some actions
  * @param ctx _context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- * @param associateWorkflowLabelsRequest Labels add request
+ * @param associateActionLabelsRequest Labels add request
  * @param optional nil or *DefaultApiAddLabelsToActionsOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
 */
-func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateWorkflowLabelsRequest AssociateWorkflowLabelsRequest, localVarOptionals *DefaultApiAddLabelsToActionsOpts) (*_nethttp.Response, error) {
+func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateActionLabelsRequest AssociateActionLabelsRequest, localVarOptionals *DefaultApiAddLabelsToActionsOpts) (*_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPost
 		localVarPostBody     interface{}
@@ -77,7 +77,7 @@ func (a *DefaultApiService) AddLabelsToActions(ctx _context.Context, associateWo
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = &associateWorkflowLabelsRequest
+	localVarPostBody = &associateActionLabelsRequest
 	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFormFileName, localVarFileName, localVarFileBytes)
 	if err != nil {
 		return nil, err
@@ -8599,17 +8599,17 @@ ListLabels List the labels of the authenticated user or a workspace
  * @param "Max" (optional.Int32) -  Pagination result max result
  * @param "Offset" (optional.Int32) -  Pagination offset
  * @param "Search" (optional.String) -  Filter search param
- * @param "Type_" (optional.Interface of WorkflowQueryAttribute) -  Labels type
-@return ListWorkspacesResponse
+ * @param "Type_" (optional.Interface of LabelType) -  Labels type
+@return ListLabelsResponse
 */
-func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *DefaultApiListLabelsOpts) (ListWorkspacesResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *DefaultApiListLabelsOpts) (ListLabelsResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodGet
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  ListWorkspacesResponse
+		localVarReturnValue  ListLabelsResponse
 	)
 
 	// create path and map variables
@@ -8672,7 +8672,7 @@ func (a *DefaultApiService) ListLabels(ctx _context.Context, localVarOptionals *
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v ListWorkspacesResponse
+			var v ListLabelsResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -11461,16 +11461,16 @@ UpdateLabel Update an existing label
  * @param updateLabelRequest Label update request
  * @param optional nil or *DefaultApiUpdateLabelOpts - Optional Parameters:
  * @param "WorkspaceId" (optional.Int64) -  Workspace numeric identifier
-@return CreateLabelResponse
+@return UpdateLabelResponse
 */
-func (a *DefaultApiService) UpdateLabel(ctx _context.Context, labelId int64, updateLabelRequest UpdateLabelRequest, localVarOptionals *DefaultApiUpdateLabelOpts) (CreateLabelResponse, *_nethttp.Response, error) {
+func (a *DefaultApiService) UpdateLabel(ctx _context.Context, labelId int64, updateLabelRequest UpdateLabelRequest, localVarOptionals *DefaultApiUpdateLabelOpts) (UpdateLabelResponse, *_nethttp.Response, error) {
 	var (
 		localVarHTTPMethod   = _nethttp.MethodPut
 		localVarPostBody     interface{}
 		localVarFormFileName string
 		localVarFileName     string
 		localVarFileBytes    []byte
-		localVarReturnValue  CreateLabelResponse
+		localVarReturnValue  UpdateLabelResponse
 	)
 
 	// create path and map variables
@@ -11525,7 +11525,7 @@ func (a *DefaultApiService) UpdateLabel(ctx _context.Context, labelId int64, upd
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 200 {
-			var v CreateLabelResponse
+			var v UpdateLabelResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

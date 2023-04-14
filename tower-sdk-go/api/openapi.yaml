@@ -106,7 +106,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AssociateWorkflowLabelsRequest'
+              $ref: '#/components/schemas/AssociateActionLabelsRequest'
         description: Labels add request
         required: true
       responses:
@@ -1221,14 +1221,14 @@ paths:
         name: type
         required: false
         schema:
-          $ref: '#/components/schemas/WorkflowQueryAttribute'
+          $ref: '#/components/schemas/LabelType'
         style: form
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ListWorkspacesResponse'
+                $ref: '#/components/schemas/ListLabelsResponse'
           description: OK
         "400":
           content:
@@ -1347,7 +1347,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateLabelResponse'
+                $ref: '#/components/schemas/UpdateLabelResponse'
           description: OK
         "400":
           content:
@@ -6907,6 +6907,7 @@ components:
           - container-reg
           - tw-agent
           - codecommit
+          - gitea
           maxLength: 16
           type: string
         baseUrl:
@@ -8195,6 +8196,16 @@ components:
           readOnly: true
           type: string
       type: object
+    GiteaSecurityKeys:
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        discriminator:
+          readOnly: true
+          type: string
+      type: object
     GithubActionConfig:
       properties:
         events:
@@ -8493,6 +8504,12 @@ components:
         resource:
           type: boolean
       type: object
+    LabelType:
+      enum:
+      - simple
+      - resource
+      - all
+      type: string
     Launch:
       example:
         configText: configText
@@ -8883,6 +8900,27 @@ components:
           items:
             $ref: '#/components/schemas/EventType'
           type: array
+      type: object
+    ListLabelsResponse:
+      example:
+        totalSize: 0
+        labels:
+        - resource: true
+          name: name
+          id: 0
+          value: value
+        - resource: true
+          name: name
+          id: 0
+          value: value
+      properties:
+        labels:
+          items:
+            $ref: '#/components/schemas/LabelDbDto'
+          type: array
+        totalSize:
+          format: int64
+          type: integer
       type: object
     ListMembersResponse:
       example:
@@ -10722,6 +10760,7 @@ components:
       discriminator:
         mapping:
           github: '#/components/schemas/GitHubSecurityKeys'
+          gitea: '#/components/schemas/GiteaSecurityKeys'
           container-reg: '#/components/schemas/ContainerRegistryKeys'
           tw-agent: '#/components/schemas/AgentSecurityKeys'
           k8s: '#/components/schemas/K8sSecurityKeys'
@@ -10739,6 +10778,7 @@ components:
       - $ref: '#/components/schemas/GitHubSecurityKeys'
       - $ref: '#/components/schemas/GitLabSecurityKeys'
       - $ref: '#/components/schemas/BitBucketSecurityKeys'
+      - $ref: '#/components/schemas/GiteaSecurityKeys'
       - $ref: '#/components/schemas/SSHSecurityKeys'
       - $ref: '#/components/schemas/K8sSecurityKeys'
       - $ref: '#/components/schemas/AzureSecurityKeys'
@@ -12224,6 +12264,20 @@ components:
         name: name
         value: value
       properties:
+        name:
+          type: string
+        value:
+          type: string
+      type: object
+    UpdateLabelResponse:
+      example:
+        name: name
+        id: 0
+        value: value
+      properties:
+        id:
+          format: int64
+          type: integer
         name:
           type: string
         value:
