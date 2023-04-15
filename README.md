@@ -47,3 +47,104 @@ $ export TOWER_ACCESS_TOKEN=<your_tower_token>
 $ ./tw organizations list
 $ go run cmd/cli/main.go organizations list
 ```
+
+## Status
+
+Actions:
+- [ ] Add
+- [ ] View
+- [ ] List
+- [ ] Update
+- [ ] Delete
+
+Collaborators:
+- [ ] List
+
+Compute-envs:
+- [ ] Add
+- [ ] View
+- [ ] List
+- [ ] Update
+- [ ] Delete
+- [ ] Export
+- [ ] Import
+- [ ] Primary
+
+Credentials:
+- [ ] Add
+- [X] List
+- [ ] Update
+- [ ] Delete
+
+Datasets:
+- [ ] Add
+- [ ] List
+- [ ] View
+- [ ] Update
+- [ ] Delete
+- [ ] Download
+- [ ] Url
+
+Info:
+- [X]
+
+Launch:
+- [ ]
+
+Members:
+- [ ] Add
+- [ ] List
+- [ ] Update
+- [ ] Delete
+- [ ] Leave
+
+Organizations:
+- [ ] Add
+- [X] View
+- [X] List
+- [ ] Update
+- [ ] Delete
+
+Participants:
+- [ ] Add
+- [ ] List
+- [ ] Update
+- [ ] Delete
+- [ ] Leave
+
+Pipelines:
+- [ ] Add
+- [ ] View
+- [ ] List
+- [ ] Update
+- [ ] Delete
+- [ ] Export
+- [ ] Import
+
+Runs:
+- [ ] View
+- [ ] List
+- [ ] Relaunch
+- [ ] Cancel
+- [ ] Delete
+
+Teams:
+- [ ] Add
+- [ ] List
+- [ ] Members
+- [ ] Delete
+
+Workspaces:
+- [ ] Add
+- [ ] List
+- [ ] View
+- [ ] Update
+- [ ] Delete
+- [ ] Leave
+
+Secrets:
+- [X] Add
+- [X] View
+- [X] List
+- [X] Update
+- [X] Delete
