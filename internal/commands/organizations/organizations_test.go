@@ -5,26 +5,18 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
-	"os"
-	"path/filepath"
 	"testing"
 	"tower-cli-go/internal/commands"
+	tu "tower-cli-go/internal/utils/testutils"
 
 	"github.com/stretchr/testify/assert"
 )
 
 var testDataDir = "../testdata"
 
-func getTestResource(path string) string {
-	path = filepath.Join(testDataDir, path)
-	data, err := os.ReadFile(path)
-	if err != nil {
-		panic(err)
-	}
-	return string(data)
-}
-
 func TestList(t *testing.T) {
+
+	tRes := tu.TestResourceFolder(testDataDir)
 
 	testCases := []struct {
 		epMocks []struct {
@@ -37,8 +29,8 @@ func TestList(t *testing.T) {
 	}{
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 			},
 			args: []string{
 				"organizations", "list", "-o", "json", "-t", "<tower_token>",
@@ -61,7 +53,7 @@ func TestList(t *testing.T) {
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
+				{"GET", "/user-info", tRes("user.json")},
 				{"GET", "/user/1264/workspaces", "{}"},
 			},
 			args: []string{
@@ -114,6 +106,8 @@ func TestList(t *testing.T) {
 
 func TestView(t *testing.T) {
 
+	tRes := tu.TestResourceFolder(testDataDir)
+
 	testCases := []struct {
 		epMocks []struct {
 			method  string
@@ -125,9 +119,9 @@ func TestView(t *testing.T) {
 	}{
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
-				{"GET", "/orgs/27736513644467", getTestResource("organizations/organizations_view.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
+				{"GET", "/orgs/27736513644467", tRes("organizations/organizations_view.json")},
 			},
 			args: []string{
 				"organizations", "view", "-n", "organization1", 
@@ -145,8 +139,8 @@ func TestView(t *testing.T) {
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 				{"GET", "/orgs/27736513644467", "{}"},
 			},
 			args: []string{
@@ -161,9 +155,9 @@ func TestView(t *testing.T) {
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
-				{"GET", "/orgs/27736513644467", getTestResource("organizations/organizations_view.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
+				{"GET", "/orgs/27736513644467", tRes("organizations/organizations_view.json")},
 			},
 			args: []string{
 				"organizations", "view", // no ID/name provided

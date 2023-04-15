@@ -5,26 +5,18 @@ import (
 	"io"
 	"net/http"
 	"net/http/httptest"
-	"os"
-	"path/filepath"
 	"testing"
 	"tower-cli-go/internal/commands"
+	tu "tower-cli-go/internal/utils/testutils"
 
 	"github.com/stretchr/testify/assert"
 )
 
 var testDataDir = "../testdata"
 
-func getTestResource(path string) string {
-	path = filepath.Join(testDataDir, path)
-	data, err := os.ReadFile(path)
-	if err != nil {
-		panic(err)
-	}
-	return string(data)
-}
-
 func TestList(t *testing.T) {
+
+	tRes := tu.TestResourceFolder(testDataDir)
 
 	testCases := []struct {
 		epMocks []struct {
@@ -37,10 +29,10 @@ func TestList(t *testing.T) {
 	}{
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
-				{"GET", "/credentials", getTestResource("credentials_list.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
+				{"GET", "/credentials", tRes("credentials_list.json")},
 			},
 			args: []string{
 				"credentials", "list", 
@@ -98,10 +90,10 @@ func TestList(t *testing.T) {
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
-				{"GET", "/credentials", getTestResource("credentials_list.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
+				{"GET", "/credentials", tRes("credentials_list.json")},
 			},
 			args: []string{
 				"credentials", "list", 
@@ -159,9 +151,9 @@ func TestList(t *testing.T) {
 		},
 		{
 			epMocks: []struct{ method string; path string; jsonRes string; }{
-				{"GET", "/user-info", getTestResource("user.json")},
-				{"GET", "/user", getTestResource("user.json")},
-				{"GET", "/user/1264/workspaces", getTestResource("workspaces/workspaces_list.json")},
+				{"GET", "/user-info", tRes("user.json")},
+				{"GET", "/user", tRes("user.json")},
+				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 				{"GET", "/credentials", "{}"},
 			},
 			args: []string{
