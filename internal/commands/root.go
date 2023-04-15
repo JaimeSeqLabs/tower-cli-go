@@ -3,8 +3,9 @@ package commands
 import (
 	"fmt"
 	"os"
-	"tower-cli-go/internal/commands/organizations"
 	"tower-cli-go/internal/commands/credentials"
+	"tower-cli-go/internal/commands/organizations"
+	"tower-cli-go/internal/commands/secrets"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -57,6 +58,7 @@ func NewRootCmd() *cobra.Command {
 		NewInfoCmd(),
 		organizations.NewOrganizationsCmd(),
 		credentials.NewCredentialsCmd(),
+		secrets.NewSecretsCmd(),
 	)
 
 	return rootCmd
