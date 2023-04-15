@@ -8,6 +8,7 @@ import (
 	"strings"
 	"tower-cli-go/internal/utils"
 
+	"github.com/antihax/optional"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -92,6 +93,50 @@ func (w ApiWrapper) FetchOrganization(orgID int64, orgName string) (openapi.Desc
 	}
 	
 	return response, nil
+}
+
+func (w ApiWrapper) FetchSecret(secretID int64, secretName string, wspID optional.Int64) (openapi.PipelineSecret, error) {
+	if secretID <= 0 {
+		return w.SecretByName(wspID, secretName)
+	} else {
+		res, _, err := w.Api.DescribePipelineSecret(
+			w.Ctx, 
+			secretID, 
+			&openapi.DefaultApiDescribePipelineSecretOpts{
+				WorkspaceId: wspID,
+			},
+		)
+		if err != nil {
+			return openapi.PipelineSecret{}, err
+		}
+		return res.PipelineSecret, nil
+	}
+}
+
+func (w ApiWrapper) SecretByName(wspID optional.Int64, secretName string) (openapi.PipelineSecret, error) {
+	
+	res, _, err := w.Api.ListPipelineSecrets(
+		w.Ctx,
+		&openapi.DefaultApiListPipelineSecretsOpts{
+			WorkspaceId: wspID,
+		},
+	)
+	if err != nil {
+		return openapi.PipelineSecret{}, err
+	}
+
+	for _, s := range res.PipelineSecrets {
+		if secretName == s.Name {
+			return s, nil
+		}
+	}
+
+	ref, err := w.WorkspaceRef(wspID.Value())
+	if err != nil {
+		return openapi.PipelineSecret{}, err
+	}
+
+	return openapi.PipelineSecret{}, fmt.Errorf("secret %s not found in workspace %s", secretName, ref)
 }
 
 func (w ApiWrapper) OrgByName(orgName string) (openapi.OrgAndWorkspaceDbDto, error) {
@@ -222,8 +267,50 @@ func (w ApiWrapper) WorkspaceRef(wspID int64) (string, error) {
 	return w.BuildWorkspaceRef(dto.OrgName, dto.WorkspaceName), nil
 }
 
+func (w ApiWrapper) WorkspaceID(maybeEmptyWspRef string) (optional.Int64, error) {
+	
+	if maybeEmptyWspRef == "" {
+		return optional.EmptyInt64(), nil
+	} else {
+	
+		dto, err := w.FindOrgAndWspByWspRef(maybeEmptyWspRef)
+		if err != nil {
+			return optional.EmptyInt64(), err
+		}
+		return optional.NewInt64(dto.WorkspaceId), nil
+	
+	}
+}
+
 func (w ApiWrapper) BuildWorkspaceRef(orgName, wspName string) string {
 	return fmt.Sprintf("[%s / %s]", orgName, wspName)	
+}
+
+func (w ApiWrapper) WorkspaceIdentifiers(wspIdOrRef string) (wspID optional.Int64, wspName string, orgName string, ref string, retErr error) {
+
+	wspID = optional.EmptyInt64()
+	wspName = ""
+	orgName = ""
+	ref = ""
+	retErr = nil
+
+	if wspIdOrRef == "" {
+		return
+	}
+	
+	dto, err := w.FindOrgAndWspByWspRef(wspIdOrRef)
+	if err != nil {
+		retErr = err
+		return
+	}
+
+	wspID = optional.NewInt64(dto.WorkspaceId)
+	wspName = dto.WorkspaceName
+	orgName = dto.OrgName
+	ref = w.BuildWorkspaceRef(orgName, wspName)
+	retErr = nil
+	
+	return
 }
 
 func (w ApiWrapper) BaseWspUrl(wspID int64) (string, error) {
