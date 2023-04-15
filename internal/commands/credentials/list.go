@@ -6,13 +6,12 @@ import (
 	"io"
 	"openapi"
 	"tower-cli-go/internal"
+	"tower-cli-go/internal/commands/common_flags"
 	"tower-cli-go/internal/formatters"
 
-	"github.com/antihax/optional"
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
 	"github.com/spf13/cobra"
-	"github.com/spf13/viper"
 )
 
 func NewListCmd() *cobra.Command {
@@ -23,23 +22,14 @@ func NewListCmd() *cobra.Command {
 		RunE: func(cmd *cobra.Command, args []string) error {
 
 			wrapper := internal.NewApiFor(cmd)
-			wspRefFlag, _ := cmd.Flags().GetString("workspace")			
+			wspRefFlag, _ := cmd.Flags().GetString("workspace")
 
-			var wspID optional.Int64
-			var wspRef string
-			
-			if wspRefFlag == "" {
-				wspID = optional.EmptyInt64()
+			wspID, _, _, wspRef, _ :=  wrapper.WorkspaceIdentifiers(wspRefFlag)
+
+			if !wspID.IsSet() {
 				wspRef = "user"
-			} else {
-				dto, err := wrapper.FindOrgAndWspByWspRef(wspRefFlag)
-				if err != nil {
-					return err
-				}
-				wspID = optional.NewInt64(dto.WorkspaceId)
-				wspRef = wrapper.BuildWorkspaceRef(dto.OrgName, dto.WorkspaceName)
 			}
-	
+
 			response, _, err := wrapper.Api.ListCredentials(wrapper.Ctx, &openapi.DefaultApiListCredentialsOpts{ WorkspaceId: wspID })
 			if err != nil {
 				return err
@@ -66,13 +56,8 @@ func NewListCmd() *cobra.Command {
 		},
 	}
 
-	listCmd.Flags().StringP(
-		"workspace", "w", "",
-		"Workspace numeric identifier (TOWER_WORKSPACE_ID as default) or workspace reference as \"OrganizationName/WorkspaceName\"",
-	)
-	viper.BindEnv("workspace", "TOWER_WORKSPACE_ID")
-	viper.BindPFlag("workspace", listCmd.Flags().Lookup("workspace"))
-
+	common_flags.AddOptionalWorkspaceFlags(listCmd)
+	
 	return listCmd
 }
 
@@ -101,7 +86,7 @@ func (response CredentialsList) WriteAsTable(w io.Writer) error {
 
 	} else {
 		t.SortBy([]table.SortBy{
-			{Name: "ID", Mode: table.Dsc},
+			{Name: "ID", Mode: table.Asc},
 		})
 		t.AppendHeader(table.Row{ 
 			"ID", "Provider", "Name", "Last activity",
