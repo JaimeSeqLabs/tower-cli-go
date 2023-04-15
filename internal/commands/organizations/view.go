@@ -61,20 +61,12 @@ func (response OrganizationsView) WriteAsTable(w io.Writer) error {
 	t.Style().Options.SeparateRows = true
 	t.Style().Format.Header = text.FormatDefault
 
-	t.AppendRow(table.Row{
-		"ID", formatters.FormatOrgID(response.Organization.OrgId, response.ServerUrl, response.Organization.Name),
-	})
-	t.AppendRow(table.Row{
-		"Name", response.Organization.Name,
-	})
-	t.AppendRow(table.Row{
-		"Full Name", response.Organization.FullName,
-	})
-	t.AppendRow(table.Row{
-		"Description", response.Organization.Description,
-	})
-	t.AppendRow(table.Row{
-		"Website", response.Organization.Website,
+	t.AppendRows([]table.Row{
+		{"ID", formatters.FormatOrgID(response.Organization.OrgId, response.ServerUrl, response.Organization.Name)},
+		{"Name", response.Organization.Name},
+		{"Full Name", response.Organization.FullName},
+		{"Description", response.Organization.Description},
+		{"Website", response.Organization.Website},
 	})
 
 	t.Render()
