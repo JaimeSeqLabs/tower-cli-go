@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TW cli WASM demo</title>
+        <meta charset="utf-8">
+        <script src="wasm_exec.js"></script>
+        <script>
+
+            if (!WebAssembly) {
+               throw new Error("WebAssembly is not supported in your browser")
+            }
+    
+            const go = new Go();
+            WebAssembly.instantiateStreaming(fetch("main.wasm"), go.importObject).then(result => {
+                go.run(result.instance); // this defines a global "TowerCli" function under 'window'
+            })
+
+            function doCall() {
+                let args = document.getElementById("args").value
+                TowerCli(args).then(res => {
+                    document.getElementById("stdout").innerText = res.stdout;
+                    document.getElementById("stderr").innerText = res.stderr;
+                    console.log(res.stdout);
+                    console.error(res.stderr)
+                })
+            }
+
+            function pressEnter(event) {
+                if (event.key == "Enter") {
+                    doCall()
+                }
+            }
+
+        </script>
+        <style>
+            html { background-color: antiquewhite;}
+            body { min-height: 100vh; }
+
+            div {
+                margin: 20px;
+            }
+            input {
+                width: 50vw;
+            }
+            #stdoutDiv, #stderrDiv {
+                border-width: 2px;
+                border-style: solid;
+                border-radius: 0.375rem; /* 6px */
+                padding: 5px;
+            }
+            #stdoutDiv {
+                border-color: rgb(168 85 247);
+            }
+            #stderrDiv {
+                border-color: rgb(236 72 153);
+            }
+
+        </style>
+    </head>
+    <body>
+        <main>
+
+            <br><br>
+            
+            <div id="terminal">
+                <p>Please enter arguments and flags for cli</p>
+                <label for="args">tw</label>
+                <input type="text" name="args" id="args" onkeypress="pressEnter(event)">
+                <button onclick="doCall()">Execute</button>
+            </div>
+
+            <div id="stdoutDiv">
+                <p id="stdout"></p>
+            </div>
+
+            <div id="stderrDiv">
+                <p id="stderr"></p>
+            </div>
+            
+        </main>
+    </body>
+</html>
