@@ -24,3 +24,14 @@ func AddSecretRefFlags(cmd *cobra.Command) {
 		"Secret name",
 	)
 }
+
+func AddAwsKeysFlags(cmd *cobra.Command) {
+	cmd.Flags().StringP(
+		"access-key", "a", "",
+		"The AWS access key required to access the desired service",
+	)
+	cmd.Flags().StringP(
+		"secret-key", "s", "",
+		"The AWS secret key required to access the desired service",
+	)
+}
