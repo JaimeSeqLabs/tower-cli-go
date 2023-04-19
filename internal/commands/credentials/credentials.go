@@ -19,6 +19,7 @@ func NewCredentialsCmd() *cobra.Command {
 		NewListCmd(),
 		add_cmd.NewAddCmd(),
 		update_cmd.NewUpdateCmd(),
+		NewDeleteCmd(),
 	)
 
 	return credsCmd
