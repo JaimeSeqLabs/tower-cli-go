@@ -79,6 +79,6 @@ func (s SecretAdded) WriteAsJSON(w io.Writer) error {
 }
 
 func (s SecretAdded) WriteAsTable(w io.Writer) error {
-	fmt.Fprintf(w, "New secret '%s' (%d) added at %s workspace\n", s.Name, s.ID, s.WorkspaceRef)
-	return nil
+	_, err := fmt.Fprintf(w, "New secret '%s' (%d) added at %s workspace\n", s.Name, s.ID, s.WorkspaceRef)
+	return err
 }

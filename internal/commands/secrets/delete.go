@@ -77,7 +77,7 @@ func (s SecretDelete) WriteAsJSON(w io.Writer) error {
 }
 
 func (s SecretDelete) WriteAsTable(w io.Writer) error {
-	fmt.Fprintf(w, "Secret '%s' deleted at %s workspace\n", s.Secret.Name, s.WorkspaceRef)
-	return nil
+	_, err := fmt.Fprintf(w, "Secret '%s' deleted at %s workspace\n", s.Secret.Name, s.WorkspaceRef)
+	return err
 
 }
