@@ -24,23 +24,28 @@ func TestList(t *testing.T) {
 			path    string
 			jsonRes string
 		}
-		args        []string
+		args       []string
 		outChecker func(t *testing.T, out string)
 	}{
 		{
-			epMocks: []struct{ method string; path string; jsonRes string; }{
+			epMocks: []struct {
+				method  string
+				path    string
+				jsonRes string
+			}{
 				{"GET", "/user-info", tRes("user.json")},
 				{"GET", "/user", tRes("user.json")},
 				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 				{"GET", "/credentials", tRes("credentials_list.json")},
 			},
 			args: []string{
-				"credentials", "list", 
+				"credentials", "list",
 				"-o", "json", "-t", "<tower_token>",
 				// no workspace ref
 			},
-			outChecker: func(t *testing.T, out string) { assert.JSONEq(t,
-				`{
+			outChecker: func(t *testing.T, out string) {
+				assert.JSONEq(t,
+					`{
 					"workspaceRef": "user",
 					"credentials": [
 						{
@@ -86,22 +91,28 @@ func TestList(t *testing.T) {
 							}
 						}
 					]
-				}`, out)},
+				}`, out)
+			},
 		},
 		{
-			epMocks: []struct{ method string; path string; jsonRes string; }{
+			epMocks: []struct {
+				method  string
+				path    string
+				jsonRes string
+			}{
 				{"GET", "/user-info", tRes("user.json")},
 				{"GET", "/user", tRes("user.json")},
 				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 				{"GET", "/credentials", tRes("credentials_list.json")},
 			},
 			args: []string{
-				"credentials", "list", 
+				"credentials", "list",
 				"-o", "json", "-t", "<tower_token>",
 				"-w", "organization2/workspace2",
 			},
-			outChecker: func(t *testing.T, out string) { assert.JSONEq(t, 
-				`{
+			outChecker: func(t *testing.T, out string) {
+				assert.JSONEq(t,
+					`{
 					"workspaceRef": "[organization2 / workspace2]",
 					"credentials": [
 						{
@@ -147,25 +158,32 @@ func TestList(t *testing.T) {
 							}
 						}
 					]
-				}`, out)},
+				}`, out)
+			},
 		},
 		{
-			epMocks: []struct{ method string; path string; jsonRes string; }{
+			epMocks: []struct {
+				method  string
+				path    string
+				jsonRes string
+			}{
 				{"GET", "/user-info", tRes("user.json")},
 				{"GET", "/user", tRes("user.json")},
 				{"GET", "/user/1264/workspaces", tRes("workspaces/workspaces_list.json")},
 				{"GET", "/credentials", "{}"},
 			},
 			args: []string{
-				"credentials", "list", 
+				"credentials", "list",
 				"-o", "json", "-t", "<tower_token>",
 				"-w", "organization2/workspace2",
 			},
-			outChecker: func(t *testing.T, out string) { assert.JSONEq(t, 
-				`{
+			outChecker: func(t *testing.T, out string) {
+				assert.JSONEq(t,
+					`{
 					"workspaceRef": "[organization2 / workspace2]",
 					"credentials": []
-				}`, out)},
+				}`, out)
+			},
 		},
 	}
 
@@ -205,5 +223,5 @@ func TestList(t *testing.T) {
 		// cleanup before next test case
 		server.Close()
 	}
-	
+
 }

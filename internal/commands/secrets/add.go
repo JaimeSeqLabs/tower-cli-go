@@ -37,7 +37,7 @@ func NewAddCmd() *cobra.Command {
 			response, _, err := wrapper.Api.CreatePipelineSecret(
 				wrapper.Ctx,
 				openapi.CreatePipelineSecretRequest{
-					Name: name,
+					Name:  name,
 					Value: value,
 				},
 				&openapi.DefaultApiCreatePipelineSecretOpts{
@@ -50,8 +50,8 @@ func NewAddCmd() *cobra.Command {
 
 			result := SecretAdded{
 				WorkspaceRef: wspRef,
-				ID: response.SecretId,
-				Name: name,
+				ID:           response.SecretId,
+				Name:         name,
 			}
 
 			return formatters.PrintTo(cmd.OutOrStdout(), result)
@@ -70,8 +70,8 @@ func NewAddCmd() *cobra.Command {
 
 type SecretAdded struct {
 	WorkspaceRef string `json:"workspaceRef"`
-	ID int64 `json:"id"`
-	Name string `json:"name"`
+	ID           int64  `json:"id"`
+	Name         string `json:"name"`
 }
 
 func (s SecretAdded) WriteAsJSON(w io.Writer) error {

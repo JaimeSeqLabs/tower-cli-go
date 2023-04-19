@@ -17,7 +17,7 @@ func NewDeleteCmd() *cobra.Command {
 	deleteCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Delete a workspace secret",
-		RunE: deleteRunE,
+		RunE:  deleteRunE,
 	}
 
 	common_flags.AddOptionalWorkspaceFlags(deleteCmd)
@@ -61,15 +61,15 @@ func deleteRunE(cmd *cobra.Command, args []string) error {
 
 	result := SecretDelete{
 		WorkspaceRef: wspRef,
-		Secret: secretResponse,
+		Secret:       secretResponse,
 	}
 
 	return formatters.PrintTo(cmd.OutOrStdout(), result)
 }
 
 type SecretDelete struct {
-	WorkspaceRef string `json:"workspaceRef"`
-	Secret openapi.PipelineSecret `json:"secret"`
+	WorkspaceRef string                 `json:"workspaceRef"`
+	Secret       openapi.PipelineSecret `json:"secret"`
 }
 
 func (s SecretDelete) WriteAsJSON(w io.Writer) error {

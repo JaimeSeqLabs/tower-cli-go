@@ -7,7 +7,7 @@ func NewOrganizationsCmd() *cobra.Command {
 	orgCmd := &cobra.Command{
 		Use:   "organizations",
 		Short: "Manage organizations",
-		Run: func(cmd *cobra.Command, args []string) {},
+		Run:   func(cmd *cobra.Command, args []string) {},
 	}
 
 	orgCmd.AddCommand(

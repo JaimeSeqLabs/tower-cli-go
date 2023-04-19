@@ -21,7 +21,7 @@ func NewRootCmd() *cobra.Command {
 			// load cfg before any cmd executes
 			cfg, _ := cmd.Flags().GetString("config")
 			initViperCfg(cfg)
-			
+
 			// fast return cmds
 			if show, _ := cmd.Flags().GetBool("version"); show {
 				fmt.Println("TODO: show version") // TODO
