@@ -35,3 +35,34 @@ func AddAwsKeysFlags(cmd *cobra.Command) {
 		"The AWS secret key required to access the desired service",
 	)
 }
+
+func AddOptionalCredentialsRefFlags(cmd *cobra.Command) {
+	cmd.Flags().StringP("name", "n", "", "Credentials name")
+	cmd.Flags().StringP("id", "i", "", "Credentials unique id")
+}
+
+func AddAzureKeysMandatoryFlags(cmd *cobra.Command) {
+	cmd.Flags().String(
+		"batch-key", "",
+		"Azure batch account key",
+	)
+	cobra.MarkFlagRequired(cmd.Flags(), "batch-key")
+
+	cmd.Flags().String(
+		"batch-name", "",
+		"Azure batch account name",
+	)
+	cobra.MarkFlagRequired(cmd.Flags(), "batch-name")
+
+	cmd.Flags().String(
+		"storage-key", "",
+		"Azure blob storage account key",
+	)
+	cobra.MarkFlagRequired(cmd.Flags(), "storage-key")
+
+	cmd.Flags().String(
+		"storage-name", "",
+		"Azure blob storage account name",
+	)
+	cobra.MarkFlagRequired(cmd.Flags(), "storage-name")
+}

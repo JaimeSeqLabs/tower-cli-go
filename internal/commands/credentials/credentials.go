@@ -2,6 +2,7 @@ package credentials
 
 import (
 	add_cmd "tower-cli-go/internal/commands/credentials/add"
+	update_cmd "tower-cli-go/internal/commands/credentials/update"
 
 	"github.com/spf13/cobra"
 )
@@ -18,6 +19,7 @@ func NewCredentialsCmd() *cobra.Command {
 	credsCmd.AddCommand(
 		NewListCmd(),
 		add_cmd.NewAddCmd(),
+		update_cmd.NewUpdateCmd(),
 	)
 
 	return credsCmd
