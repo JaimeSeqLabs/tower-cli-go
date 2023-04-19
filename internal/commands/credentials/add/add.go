@@ -59,6 +59,10 @@ func createAddCmdRunE(keyProvider provider.CredentialsProvider) func(cmd *cobra.
 			return err
 		}
 
+		if !wspID.IsSet() {
+			wspRef = "user"
+		}
+
 		keys, err := keyProvider.SecurityKeys()
 		if err != nil {
 			return err
@@ -107,6 +111,6 @@ func (ca CrendentialsAdded) WriteAsJSON(w io.Writer) error {
 }
 
 func (ca CrendentialsAdded) WriteAsTable(w io.Writer) error {
-	fmt.Fprintf(w, "New %s credentials '%s' (%s) added at %s workspace\n", ca.Provider, ca.Name, ca.ID, ca.WorkspaceRef)
-	return nil
+	_, err := fmt.Fprintf(w, "New %s credentials '%s' (%s) added at %s workspace\n", ca.Provider, ca.Name, ca.ID, ca.WorkspaceRef)
+	return err
 }
