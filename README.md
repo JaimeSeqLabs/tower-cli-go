@@ -71,10 +71,10 @@ Compute-envs:
 - [ ] Primary
 
 Credentials:
-- [ ] Add
+- [X] Add
 - [X] List
-- [ ] Update
-- [ ] Delete
+- [X] Update
+- [X] Delete
 
 Datasets:
 - [ ] Add
