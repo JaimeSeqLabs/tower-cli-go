@@ -15,7 +15,11 @@ type gitHubCredsProvider struct {
 }
 
 func (p gitHubCredsProvider) BaseUrl() string {
-	return ""
+	baseUrl, err := p.Cmd.Flags().GetString("base-url")
+	if err != nil {
+		return ""
+	}
+	return baseUrl
 }
 
 func (p gitHubCredsProvider) Type() CredentialsProviderEnum {

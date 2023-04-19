@@ -14,7 +14,11 @@ type bitBucketCredsProvider struct {
 }
 
 func (p bitBucketCredsProvider) BaseUrl() string {
-	return ""
+	baseUrl, err := p.Cmd.Flags().GetString("base-url")
+	if err != nil {
+		return ""
+	}
+	return baseUrl
 }
 
 func (p bitBucketCredsProvider) Type() CredentialsProviderEnum {

@@ -43,5 +43,10 @@ func NewAddGitLabCmd() *cobra.Command {
 	)
 	cobra.MarkFlagRequired(glabCmd.Flags(), "gitlab-token")
 
+	glabCmd.Flags().String(
+		"base-url", "",
+		"Repository base URL",
+	)
+
 	return glabCmd
 }

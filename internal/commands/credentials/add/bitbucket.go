@@ -35,5 +35,10 @@ func NewAddBitBucketCmd() *cobra.Command {
 	)
 	cobra.MarkFlagRequired(bitBuckCmd.Flags(), "password")
 
+	bitBuckCmd.Flags().String(
+		"base-url", "",
+		"Repository base URL",
+	)
+
 	return bitBuckCmd
 }

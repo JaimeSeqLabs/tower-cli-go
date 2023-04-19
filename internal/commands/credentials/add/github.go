@@ -43,5 +43,10 @@ func NewAddGitHubCmd() *cobra.Command {
 	)
 	cobra.MarkFlagRequired(ghCmd.Flags(), "github-token")
 
+	ghCmd.Flags().String(
+		"base-url", "",
+		"Repository base URL",
+	)
+
 	return ghCmd
 }
