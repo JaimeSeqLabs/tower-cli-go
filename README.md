@@ -99,11 +99,11 @@ Members:
 - [ ] Leave
 
 Organizations:
-- [ ] Add
+- [X] Add
 - [X] View
 - [X] List
-- [ ] Update
-- [ ] Delete
+- [X] Update
+- [X] Delete
 
 Participants:
 - [ ] Add
