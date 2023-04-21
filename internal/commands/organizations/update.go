@@ -13,11 +13,11 @@ import (
 )
 
 func NewUpdateCmd() *cobra.Command {
-	
+
 	updateCmd := &cobra.Command{
 		Use:   "update",
 		Short: "Update organization details",
-		RunE: updateCmdRunE,
+		RunE:  updateCmdRunE,
 	}
 
 	common_flags.AddOrganizationRefFlag(updateCmd)
@@ -60,10 +60,10 @@ func updateCmdRunE(cmd *cobra.Command, args []string) error {
 	}
 
 	req := openapi.UpdateOrganizationRequest{
-		FullName: orgFullName,
+		FullName:    orgFullName,
 		Description: orgDesc,
-		Location: orgLoc,
-		Website: orgURL,
+		Location:    orgLoc,
+		Website:     orgURL,
 	}
 
 	_, err = wrapper.Api.UpdateOrganization(wrapper.Ctx, response.Organization.OrgId, req)
@@ -71,17 +71,17 @@ func updateCmdRunE(cmd *cobra.Command, args []string) error {
 		return err
 	}
 
-	result := OrganizationsUpdated {
+	result := OrganizationsUpdated{
 		OrgID: response.Organization.OrgId,
-		Name: response.Organization.Name,
+		Name:  response.Organization.Name,
 	}
 
 	return formatters.PrintTo(cmd.OutOrStdout(), result)
 }
 
 type OrganizationsUpdated struct {
-	OrgID int64 `json:"orgId"`
-	Name string `json:"name"`
+	OrgID int64  `json:"orgId"`
+	Name  string `json:"name"`
 }
 
 func (res OrganizationsUpdated) WriteAsJSON(w io.Writer) error {

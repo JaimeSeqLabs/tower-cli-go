@@ -17,7 +17,7 @@ func NewDeleteCmd() *cobra.Command {
 	deleteCmd := &cobra.Command{
 		Use:   "delete",
 		Short: "Delete an organization",
-		RunE: deleteRunE,
+		RunE:  deleteRunE,
 	}
 
 	common_flags.AddOrganizationRefFlag(deleteCmd)
@@ -32,7 +32,7 @@ func deleteRunE(cmd *cobra.Command, args []string) error {
 	var orgRef string
 	orgId, _ := cmd.Flags().GetInt64("id")
 	orgName, _ := cmd.Flags().GetString("name")
-	
+
 	if orgId >= 0 {
 		orgRef = strconv.Itoa(int(orgId))
 	} else {
@@ -46,10 +46,10 @@ func deleteRunE(cmd *cobra.Command, args []string) error {
 
 	_, err := wrapper.Api.DeleteOrganization(wrapper.Ctx, orgId)
 	if err != nil {
-		return fmt.Errorf("Organization '%s' could not be deleted: %w", orgRef, err)
+		return fmt.Errorf("organization '%s' could not be deleted: %w", orgRef, err)
 	}
 
-	result := OrganizationsDeleted { orgRef }
+	result := OrganizationsDeleted{orgRef}
 
 	return formatters.PrintTo(cmd.OutOrStdout(), result)
 }
