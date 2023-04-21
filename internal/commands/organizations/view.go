@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 	"openapi"
-	. "tower-cli-go/internal"
+	"tower-cli-go/internal"
 	"tower-cli-go/internal/formatters"
 
 	"github.com/jedib0t/go-pretty/v6/table"
@@ -23,7 +23,7 @@ func NewViewCmd() *cobra.Command {
 			orgId, _ := cmd.Flags().GetInt64("id")
 			orgName, _ := cmd.Flags().GetString("name")
 
-			wrapper := NewApiFor(cmd)
+			wrapper := internal.NewApiFor(cmd)
 
 			response, err := wrapper.FetchOrganization(orgId, orgName)
 			if err != nil {
@@ -40,7 +40,7 @@ func NewViewCmd() *cobra.Command {
 	}
 
 	viewCmd.Flags().Int64P("id", "i", 0, "Organization unique id")
-	viewCmd.Flags().StringP("name", "n", "", "Organization unique id")
+	viewCmd.Flags().StringP("name", "n", "", "Organization name")
 	viewCmd.MarkFlagsMutuallyExclusive("id", "name")
 
 	return viewCmd
