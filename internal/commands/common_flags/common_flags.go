@@ -14,6 +14,33 @@ func AddOptionalWorkspaceFlags(cmd *cobra.Command) {
 	viper.BindPFlag("workspace", cmd.Flags().Lookup("workspace"))
 }
 
+func AddOrganizationDataFlags(cmd *cobra.Command) {
+	cmd.Flags().StringP(
+		"description", "d", "",
+		"Organization description",
+	)
+	cmd.Flags().StringP(
+		"location", "l", "",
+		"Organization location",
+	)
+	cmd.Flags().StringP(
+		"website", "w", "",
+		"Organization website URL",
+	)
+}
+
+func AddOrganizationRefFlag(cmd *cobra.Command) {
+	cmd.Flags().Int64P(
+		"id", "i", -1,
+		"Organization unique ID",
+	)
+	cmd.Flags().StringP(
+		"name", "n", "",
+		"Organization name",
+	)
+	cmd.MarkFlagsMutuallyExclusive("id", "name")
+}
+
 func AddSecretRefFlags(cmd *cobra.Command) {
 	cmd.Flags().Int64P(
 		"id", "i", -1,

@@ -12,9 +12,9 @@ func NewOrganizationsCmd() *cobra.Command {
 
 	orgCmd.AddCommand(
 		NewListCmd(),
-		DeleteCmd,
-		AddCmd,
-		UpdateCmd,
+		NewDeleteCmd(),
+		NewAddCmd(),
+		NewUpdateCmd(),
 		NewViewCmd(),
 	)
 
