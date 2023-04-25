@@ -41,6 +41,18 @@ func AddOrganizationRefFlag(cmd *cobra.Command) {
 	cmd.MarkFlagsMutuallyExclusive("id", "name")
 }
 
+func AddWorkspaceRefFlag(cmd *cobra.Command) {
+	cmd.Flags().Int64P(
+		"id", "i", -1,
+		"Workspace unique ID",
+	)
+	cmd.Flags().StringP(
+		"name", "n", "",
+		"Workspace name in the form of \"organizationName/workspaceName\"",
+	)
+	cmd.MarkFlagsMutuallyExclusive("id", "name")
+}
+
 func AddSecretRefFlags(cmd *cobra.Command) {
 	cmd.Flags().Int64P(
 		"id", "i", -1,

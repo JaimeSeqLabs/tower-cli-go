@@ -96,6 +96,18 @@ func (w ApiWrapper) FetchOrganization(orgID int64, orgName string) (openapi.Desc
 	return response, nil
 }
 
+func (w ApiWrapper) FetchOrgAndWspDbDto(wspID int64, wspRef string) (openapi.OrgAndWorkspaceDbDto, error) {
+
+	if wspID > 0 {
+		return w.FindOrgAndWspByWspID(wspID)
+	}
+	if strings.Contains(wspRef, "/") {
+		return w.FindOrgAndWspByWspRef(wspRef)
+	}
+	
+	return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("invalid workspace namespace '%s'", wspRef)
+}
+
 func (w ApiWrapper) FetchSecret(secretID int64, secretName string, wspID optional.Int64) (openapi.PipelineSecret, error) {
 	if secretID <= 0 {
 		return w.SecretByName(wspID, secretName)
