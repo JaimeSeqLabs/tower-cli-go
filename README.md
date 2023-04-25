@@ -135,12 +135,12 @@ Teams:
 - [ ] Delete
 
 Workspaces:
-- [ ] Add
-- [ ] List
-- [ ] View
-- [ ] Update
-- [ ] Delete
-- [ ] Leave
+- [X] Add
+- [X] List
+- [X] View
+- [X] Update
+- [X] Delete
+- [X] Leave
 
 Secrets:
 - [X] Add
