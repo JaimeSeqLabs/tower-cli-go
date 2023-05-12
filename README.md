@@ -71,10 +71,10 @@ Compute-envs:
 - [ ] Primary
 
 Credentials:
-- [ ] Add
+- [X] Add
 - [X] List
-- [ ] Update
-- [ ] Delete
+- [X] Update
+- [X] Delete
 
 Datasets:
 - [ ] Add
@@ -99,11 +99,11 @@ Members:
 - [ ] Leave
 
 Organizations:
-- [ ] Add
+- [X] Add
 - [X] View
 - [X] List
-- [ ] Update
-- [ ] Delete
+- [X] Update
+- [X] Delete
 
 Participants:
 - [ ] Add
@@ -135,12 +135,12 @@ Teams:
 - [ ] Delete
 
 Workspaces:
-- [ ] Add
-- [ ] List
-- [ ] View
-- [ ] Update
-- [ ] Delete
-- [ ] Leave
+- [X] Add
+- [X] List
+- [X] View
+- [X] Update
+- [X] Delete
+- [X] Leave
 
 Secrets:
 - [X] Add

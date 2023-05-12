@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 	"openapi"
-	. "tower-cli-go/internal"
+	"tower-cli-go/internal"
 	"tower-cli-go/internal/formatters"
 
 	"github.com/jedib0t/go-pretty/v6/table"
@@ -16,31 +16,31 @@ import (
 func NewViewCmd() *cobra.Command {
 
 	viewCmd := &cobra.Command{
-		Use: "view",
+		Use:   "view",
 		Short: "Describe organization details",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			
+
 			orgId, _ := cmd.Flags().GetInt64("id")
 			orgName, _ := cmd.Flags().GetString("name")
-			
-			wrapper := NewApiFor(cmd)
-			
+
+			wrapper := internal.NewApiFor(cmd)
+
 			response, err := wrapper.FetchOrganization(orgId, orgName)
 			if err != nil {
 				return err
 			}
-			
-			result := OrganizationsView {
+
+			result := OrganizationsView{
 				Organization: response.Organization,
-				ServerUrl: wrapper.ServerUrl(),
+				ServerUrl:    wrapper.ServerUrl(),
 			}
-			
+
 			return formatters.PrintTo(cmd.OutOrStdout(), result)
 		},
 	}
 
 	viewCmd.Flags().Int64P("id", "i", 0, "Organization unique id")
-	viewCmd.Flags().StringP("name", "n", "", "Organization unique id")
+	viewCmd.Flags().StringP("name", "n", "", "Organization name")
 	viewCmd.MarkFlagsMutuallyExclusive("id", "name")
 
 	return viewCmd
@@ -48,13 +48,13 @@ func NewViewCmd() *cobra.Command {
 
 type OrganizationsView struct {
 	Organization openapi.OrganizationDbDto `json:"organization"`
-	ServerUrl string `json:"-"`
+	ServerUrl    string                    `json:"-"`
 }
 
 func (response OrganizationsView) WriteAsTable(w io.Writer) error {
-	
+
 	fmt.Fprintf(w, "\nDetails for organization %s :\n\n", response.Organization.FullName)
-	
+
 	t := table.NewWriter()
 	t.SetOutputMirror(w)
 	t.SetStyle(table.StyleLight)

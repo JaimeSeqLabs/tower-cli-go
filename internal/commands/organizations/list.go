@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"io"
 	"openapi"
-	"tower-cli-go/internal/formatters"
 	. "tower-cli-go/internal"
+	"tower-cli-go/internal/formatters"
 
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/jedib0t/go-pretty/v6/text"
@@ -16,10 +16,10 @@ import (
 func NewListCmd() *cobra.Command {
 
 	listCmd := &cobra.Command{
-		Use: "list",
+		Use:   "list",
 		Short: "List available organizations",
 		RunE: func(cmd *cobra.Command, args []string) error {
-			
+
 			wrapper := NewApiFor(cmd)
 
 			userId, userName, err := wrapper.GetUserInfo()
@@ -35,17 +35,17 @@ func NewListCmd() *cobra.Command {
 
 			// save only orgs from response
 			orgs := []openapi.OrgAndWorkspaceDbDto{}
-			
+
 			for _, dto := range response.OrgsAndWorkspaces {
 				if dto.WorkspaceId <= 0 {
 					orgs = append(orgs, dto)
 				}
 			}
 
-			result := OrganizationsList {
-				UserName: userName,
+			result := OrganizationsList{
+				UserName:      userName,
 				Organizations: orgs,
-				ServerUrl: wrapper.ServerUrl(),
+				ServerUrl:     wrapper.ServerUrl(),
 			}
 
 			// print results
@@ -57,15 +57,15 @@ func NewListCmd() *cobra.Command {
 }
 
 type OrganizationsList struct {
-	UserName string `json:"userName"`
+	UserName      string                         `json:"userName"`
 	Organizations []openapi.OrgAndWorkspaceDbDto `json:"organizations"`
-	ServerUrl string `json:"-"`
+	ServerUrl     string                         `json:"-"`
 }
 
 func (response OrganizationsList) WriteAsTable(w io.Writer) error {
-	
+
 	fmt.Fprintf(w, "\nOrganizations for user %s :\n\n", response.UserName)
-	
+
 	t := table.NewWriter()
 	t.SetOutputMirror(w)
 	t.SetStyle(table.StyleLight)
@@ -73,10 +73,10 @@ func (response OrganizationsList) WriteAsTable(w io.Writer) error {
 	t.Style().Format.Header = text.FormatDefault
 
 	if len(response.Organizations) == 0 {
-		t.AppendRow(table.Row{ "No organizations found" })
+		t.AppendRow(table.Row{"No organizations found"})
 
 	} else {
-		t.AppendHeader(table.Row{ 
+		t.AppendHeader(table.Row{
 			"ID", "Name",
 		})
 		for _, org := range response.Organizations {

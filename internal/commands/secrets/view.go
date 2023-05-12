@@ -19,7 +19,7 @@ func NewViewCmd() *cobra.Command {
 	viewCmd := &cobra.Command{
 		Use:   "view",
 		Short: "View secret details",
-		RunE: viewRunE,
+		RunE:  viewRunE,
 	}
 
 	common_flags.AddOptionalWorkspaceFlags(viewCmd)
@@ -52,15 +52,15 @@ func viewRunE(cmd *cobra.Command, args []string) error {
 
 	result := SecretView{
 		WorkspaceRef: wspRef,
-		Secret: response,
+		Secret:       response,
 	}
 
 	return formatters.PrintTo(cmd.OutOrStdout(), result)
 }
 
 type SecretView struct {
-	WorkspaceRef string `json:"workspaceRef"`
-	Secret openapi.PipelineSecret `json:"secret"`
+	WorkspaceRef string                 `json:"workspaceRef"`
+	Secret       openapi.PipelineSecret `json:"secret"`
 }
 
 func (s SecretView) WriteAsJSON(w io.Writer) error {
@@ -70,7 +70,7 @@ func (s SecretView) WriteAsJSON(w io.Writer) error {
 func (s SecretView) WriteAsTable(w io.Writer) error {
 
 	fmt.Fprintf(w, "\nSecret at workspace %s :\n\n", s.WorkspaceRef)
-	
+
 	t := table.NewWriter()
 	t.SetOutputMirror(w)
 	t.SetStyle(table.StyleLight)
@@ -85,11 +85,11 @@ func (s SecretView) WriteAsTable(w io.Writer) error {
 	}
 
 	t.AppendRows([]table.Row{
-		{ "ID", id },
-		{ "Name", s.Secret.Name },
-		{ "Created", formatters.FormatDate(s.Secret.DateCreated) },
-		{ "Updated", formatters.FormatDate(s.Secret.LastUpdated) },
-		{ "Used", formatters.FormatDate(s.Secret.LastUsed) },
+		{"ID", id},
+		{"Name", s.Secret.Name},
+		{"Created", formatters.FormatDate(s.Secret.DateCreated)},
+		{"Updated", formatters.FormatDate(s.Secret.LastUpdated)},
+		{"Used", formatters.FormatDate(s.Secret.LastUsed)},
 	})
 
 	t.Render()

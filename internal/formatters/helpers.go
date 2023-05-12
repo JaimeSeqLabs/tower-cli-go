@@ -14,6 +14,13 @@ func FormatOrgID(orgID int64, serverUrl string, orgName string) string {
 	)
 }
 
+func FormatWspID(wspID int64, serverURL string, orgName string, wspName string) string {
+	return FormatLink(
+		fmt.Sprintf("%d", wspID),
+		fmt.Sprintf("%s/orgs/%s/workspaces/%s/launchpad", serverURL, orgName, wspName),
+	)
+}
+
 // FormatLink makes title as a clickable link if ANSI is enabled
 func FormatLink(title, link string) string {
 	if !text.ANSICodesSupported {

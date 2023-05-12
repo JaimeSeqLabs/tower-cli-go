@@ -3,6 +3,7 @@ package internal
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"openapi"
 	"strconv"
 	"strings"
@@ -95,6 +96,18 @@ func (w ApiWrapper) FetchOrganization(orgID int64, orgName string) (openapi.Desc
 	return response, nil
 }
 
+func (w ApiWrapper) FetchOrgAndWspDbDto(wspID int64, wspRef string) (openapi.OrgAndWorkspaceDbDto, error) {
+
+	if wspID > 0 {
+		return w.FindOrgAndWspByWspID(wspID)
+	}
+	if strings.Contains(wspRef, "/") {
+		return w.FindOrgAndWspByWspRef(wspRef)
+	}
+	
+	return openapi.OrgAndWorkspaceDbDto{}, fmt.Errorf("invalid workspace namespace '%s'", wspRef)
+}
+
 func (w ApiWrapper) FetchSecret(secretID int64, secretName string, wspID optional.Int64) (openapi.PipelineSecret, error) {
 	if secretID <= 0 {
 		return w.SecretByName(wspID, secretName)
@@ -110,6 +123,27 @@ func (w ApiWrapper) FetchSecret(secretID int64, secretName string, wspID optiona
 			return openapi.PipelineSecret{}, err
 		}
 		return res.PipelineSecret, nil
+	}
+}
+
+func (w ApiWrapper) FetchCredentials(credsID string, credsName string, wspID optional.Int64) (openapi.Credentials, *http.Response, error) {
+	
+	if credsID != "" {
+	
+		res, httpRes, err := w.Api.DescribeCredentials(
+			w.Ctx,
+			credsID,
+			&openapi.DefaultApiDescribeCredentialsOpts{
+				WorkspaceId: wspID,
+			},
+		)
+		return res.Credentials, httpRes, err
+	
+	} else {
+
+		res, httpRes, err := w.FindCredentialsByName(wspID, credsName)
+		return res, httpRes, err
+
 	}
 }
 
@@ -251,6 +285,29 @@ func (w ApiWrapper) FindOrgAndWspByWspRef(wspRef string) (openapi.OrgAndWorkspac
 	}
 
 	return w.FindOrgAndWspByWspID(id)
+}
+
+func (w ApiWrapper) FindCredentialsByName(wspID optional.Int64, credsName string) (openapi.Credentials, *http.Response, error) {
+
+	credsList, httpRes, err := w.Api.ListCredentials(w.Ctx, &openapi.DefaultApiListCredentialsOpts{
+		WorkspaceId: wspID,
+		PlatformId: optional.EmptyString(),
+	})
+	if err != nil {
+		return openapi.Credentials{}, httpRes, err
+	}
+
+	if len(credsList.Credentials) == 0{
+		return openapi.Credentials{}, httpRes, fmt.Errorf("credentials not found for workspace '%d'", wspID.Value())
+	}
+
+	for _, c := range credsList.Credentials {
+		if c.Name == credsName {
+			return c, httpRes, nil
+		}
+	}
+
+	return openapi.Credentials{}, httpRes, fmt.Errorf("credentials not found for workspace '%d'", wspID.Value())
 }
 
 func (w ApiWrapper) WorkspaceRef(wspID int64) (string, error) {

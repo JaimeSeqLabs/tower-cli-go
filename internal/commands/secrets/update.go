@@ -17,7 +17,7 @@ func NewUpdateCmd() *cobra.Command {
 	updateCmd := &cobra.Command{
 		Use:   "update",
 		Short: "Update a workspace secret",
-		RunE: updateRunE,
+		RunE:  updateRunE,
 	}
 
 	common_flags.AddOptionalWorkspaceFlags(updateCmd)
@@ -52,8 +52,8 @@ func updateRunE(cmd *cobra.Command, args []string) error {
 	}
 
 	_, err = wrapper.Api.UpdatePipelineSecret(
-		wrapper.Ctx, 
-		*secretResponse.Id, 
+		wrapper.Ctx,
+		*secretResponse.Id,
 		openapi.UpdatePipelineSecretRequest{
 			Value: secretValue,
 		},
@@ -67,7 +67,7 @@ func updateRunE(cmd *cobra.Command, args []string) error {
 
 	result := SecretUpdate{
 		WorkspaceRef: wspRef,
-		SecretName: secretResponse.Name,
+		SecretName:   secretResponse.Name,
 	}
 
 	return formatters.PrintTo(cmd.OutOrStdout(), result)
@@ -75,7 +75,7 @@ func updateRunE(cmd *cobra.Command, args []string) error {
 
 type SecretUpdate struct {
 	WorkspaceRef string `json:"workspaceRef"`
-	SecretName string `json:"secretName"`
+	SecretName   string `json:"secretName"`
 }
 
 func (s SecretUpdate) WriteAsJSON(w io.Writer) error {
@@ -83,7 +83,7 @@ func (s SecretUpdate) WriteAsJSON(w io.Writer) error {
 }
 
 func (s SecretUpdate) WriteAsTable(w io.Writer) error {
-	fmt.Fprintf(w, "Secret '%s' updated at %s workspace\n", s.SecretName, s.WorkspaceRef)
-	return nil
+	_, err := fmt.Fprintf(w, "Secret '%s' updated at %s workspace\n", s.SecretName, s.WorkspaceRef)
+	return err
 
 }
