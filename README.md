@@ -5,6 +5,31 @@ Implementation of [tower-cli](https://github.com/seqeralabs/tower-cli) in Go.
 
 > Work in progress
 
+## WASM Demo
+This is a separate branch showcasing `tower-cli-go` compiled to WASM running in the browser.
+
+How to run the demo:
+
+1) Build Tower Go sdk:
+```shell
+sh gen_tower_sdk.sh
+```
+
+2) Compile `tower-cli-go` to WASM:
+```shell
+sh build_wasm.sh
+```
+
+3) Run an instance of Tower in localhost (local instance is needed because of CORS)
+
+4) Serve the demo page:
+```shell
+sh run_server.sh
+```
+
+5) Go to http://localhost:1313 to use the cli
+
+
 ## Development
 
 ### Required dependencies:
